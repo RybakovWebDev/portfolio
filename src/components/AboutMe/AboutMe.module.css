@@ -1,0 +1,48 @@
+.wrapper {
+  width: 100%;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  padding: 0 0 1rem 0;
+  width: 40rem;
+  font-size: 22px;
+}
+
+.text::selection,
+.caret::selection {
+  background: rgb(0, 0, 0, 0.3);
+  color: black;
+}
+
+.text::selection,
+.caret::-moz-selection {
+  background: rgb(0, 0, 0, 0.3);
+  color: black;
+}
+
+.caret {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1430px) {
+  .text {
+    width: 70%;
+    max-width: 40rem;
+    font-size: clamp(10px, 5vw, 18px);
+  }
+}

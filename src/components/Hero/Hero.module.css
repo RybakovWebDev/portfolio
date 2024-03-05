@@ -1,0 +1,52 @@
+.hero {
+  padding: 0 0 7rem 0;
+  width: 100%;
+  height: calc(100vh - 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  line-height: 20rem;
+  font-size: 20rem;
+  font-weight: 800;
+}
+
+.hero h2 {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.introductionEnd {
+  margin: 3rem 0 0 0;
+  text-align: right;
+}
+
+@media (max-width: 1430px) {
+  .hero {
+    width: 90%;
+    align-items: flex-start;
+  }
+
+  .name {
+    width: auto;
+    justify-content: flex-start;
+    line-height: 1;
+    font-size: clamp(4rem, 25vw, 20rem);
+  }
+
+  .hero h2 {
+    font-size: 6vw;
+  }
+
+  .introductionEnd {
+    margin: 0.7rem 0 0 0;
+    text-align: left;
+  }
+}

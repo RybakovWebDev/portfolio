@@ -1,0 +1,39 @@
+.header {
+  width: 90vw;
+  max-width: 80rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.initials {
+  pointer-events: none;
+}
+
+.ul {
+  display: flex;
+  list-style: none;
+}
+
+.li {
+  margin: 1rem;
+  position: relative;
+  display: flex;
+}
+
+.hovered {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: black;
+}
+
+@media (max-width: 365px) {
+  .li {
+    margin: 0.5rem;
+    font-size: 13px;
+  }
+}

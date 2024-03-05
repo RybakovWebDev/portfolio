@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 80rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper p {
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.iconsWrapper {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  margin: 0 0.5rem 0 0.5rem;
+  opacity: 0.5;
+}

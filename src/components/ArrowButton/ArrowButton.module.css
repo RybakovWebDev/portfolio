@@ -1,0 +1,26 @@
+.switchProjectButton,
+.iconWrapper {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: none;
+  color: inherit;
+}
+
+@media (max-width: 1430px) {
+  .switchProjectButton,
+  .iconWrapper {
+    min-width: 2rem;
+    width: 10vw;
+    max-width: 5rem;
+    height: 10rem;
+    border-radius: 0;
+  }
+
+  .switchProjectButton {
+    margin: 22vh 0 0 0;
+  }
+}
