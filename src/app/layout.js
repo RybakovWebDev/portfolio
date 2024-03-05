@@ -4,7 +4,7 @@ import "./globals.css";
 import "./styles.css";
 import { RefsProvider } from "@/contexts/RefsContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ weight: "400", subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata = {
   title: "Andrey Rybakov",
