@@ -13,7 +13,7 @@ function ArrowButton({ direction, action, isVisible }) {
         aria-label={`${direction} project`}
         className={styles.switchProjectButton}
         onClick={action}
-        onTap={action}
+        onTouchEnd={action}
         whileTap={{ scale: 0.8 }}
         whileHover={{
           background: "rgb(0, 0, 0, 0.1)",

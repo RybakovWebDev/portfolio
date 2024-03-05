@@ -13,8 +13,8 @@ function AboutMe() {
       <m.section
         ref={aboutRef}
         className={styles.wrapper}
-        initial={{ opacity: 0 }}
-        animate={aboutIsInView && { opacity: 1 }}
+        initial={initialVerticalOffset}
+        animate={aboutIsInView && finalVerticalOffset}
         transition={smoothSpring}
       >
         <p className={styles.text}>

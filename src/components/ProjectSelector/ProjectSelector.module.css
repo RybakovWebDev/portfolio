@@ -67,7 +67,6 @@
   font-size: 25px;
   background-color: rgb(0, 0, 0, 0);
   border: none;
-  /* border-bottom: 1px solid rgb(0, 0, 0, 0.5); */
   cursor: pointer;
 }
 
@@ -89,7 +88,7 @@
   .infoWrapper {
     padding: 0;
     height: auto;
-    min-height: 21rem;
+    min-height: 22rem;
   }
 
   .imageWrapper {
@@ -107,7 +106,6 @@
   }
 
   .description {
-    margin: 0 0 2rem 0;
     font-size: clamp(15px, 6vw, 22px);
   }
 

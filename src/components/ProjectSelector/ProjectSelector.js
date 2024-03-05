@@ -50,7 +50,7 @@ function Projects({ ...props }) {
             initial={{ opacity: 0, x: animationDirection }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: animationDirection }}
-            transition={{ type: "spring", damping: 60, stiffness: 800 }}
+            transition={{ type: "spring", damping: 50, stiffness: 700 }}
           >
             <div className={styles.imageWrapper}>
               <GradientBorders topBorder={50} rightBorder={50} bottomBorder={50} leftBorder={50}>

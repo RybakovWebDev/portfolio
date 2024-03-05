@@ -10,7 +10,6 @@
 .modelLeft,
 .modelRight {
   position: absolute;
-  transform: scale(0.1);
 }
 
 .modelRight:nth-child(1) {
@@ -20,10 +19,10 @@
 
 .modelLeft:nth-child(2) {
   left: 0;
-  top: 100vh;
+  top: 105vh;
 }
 
 .modelRight:nth-child(3) {
   right: 0;
-  bottom: 17rem;
+  bottom: 5rem;
 }
