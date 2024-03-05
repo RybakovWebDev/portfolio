@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence, m, useInView, LazyMotion, domMax } from "framer-motion";
+import { AnimatePresence, m, useInView, LazyMotion, domAnimation } from "framer-motion";
 import { ExternalLink, GitHub } from "react-feather";
 
 import styles from "./ProjectSelector.module.css";
@@ -13,10 +13,13 @@ import ArrowButton from "../ArrowButton";
 
 import { PROJECTS } from "@/constants";
 import { useRefsContext } from "@/contexts/RefsContext";
+import useViewportWidth from "@/hooks/useViewportWidth";
 
 function Projects({ ...props }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState(0);
+  const isSmallScreen = useViewportWidth() < 1430;
+
   const { projectSelectorRef } = useRefsContext();
 
   const isInView = useInView(projectSelectorRef, { once: true });
@@ -33,7 +36,7 @@ function Projects({ ...props }) {
   };
 
   return (
-    <LazyMotion features={domMax}>
+    <LazyMotion features={domAnimation}>
       <m.section
         ref={projectSelectorRef}
         className={styles.wrapper}
@@ -43,9 +46,9 @@ function Projects({ ...props }) {
         {...props}
       >
         <ArrowButton direction='previous' action={prevProject} isVisible={currentIndex > 0} />
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode={isSmallScreen ? "popLayout" : "wait"}>
           <m.div
-            key={selectedProject.title}
+            key={selectedProject.slug}
             className={styles.project}
             initial={{ opacity: 0, x: animationDirection }}
             animate={{ opacity: 1, x: 0 }}

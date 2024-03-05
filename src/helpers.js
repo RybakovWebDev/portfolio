@@ -1,31 +1,5 @@
 import { ExtrudeGeometry, Shape, Mesh, Group } from "three";
 
-export const createSquareWithHole = () => {
-  const square = new Shape();
-  square.moveTo(-2.7, -2.7);
-  square.lineTo(2.7, -2.7);
-  square.lineTo(2.7, 2.7);
-  square.lineTo(-2.7, 2.7);
-  square.lineTo(-2.7, -2.7);
-
-  const hole = new Shape();
-  hole.moveTo(-2, -2);
-  hole.lineTo(2, -2);
-  hole.lineTo(2, 2);
-  hole.lineTo(-2, 2);
-  hole.lineTo(-2, -2);
-
-  square.holes.push(hole);
-
-  const extrudeSettings = {
-    steps: 2,
-    depth: 1,
-    bevelEnabled: false,
-  };
-
-  return new ExtrudeGeometry(square, extrudeSettings);
-};
-
 export const createXShape = (material) => {
   const shape1 = new Shape();
   shape1.moveTo(-0.375, -2);

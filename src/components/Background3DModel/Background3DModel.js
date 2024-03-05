@@ -2,18 +2,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { LineBasicMaterial, MeshBasicMaterial, TorusGeometry } from "three";
-import { DepthOfField, EffectComposer, Glitch, Pixelation } from "@react-three/postprocessing";
+import { MeshBasicMaterial } from "three";
+import { EffectComposer, Glitch } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 
 import styles from "./Background3DModel.module.css";
 
-import { createSquareWithHole, createXShape } from "@/helpers";
+import { createXShape } from "@/helpers";
 
 const material = new MeshBasicMaterial({ color: "rgb(235, 235, 235)" });
-const edgesMaterial = new LineBasicMaterial({ color: "rgb(0, 0, 0)", transparent: true, opacity: 0.3 });
 
-const squareGeometry = createSquareWithHole();
 const xGeometry = createXShape(material);
 
 const shapes = {
@@ -23,37 +21,15 @@ const shapes = {
         <primitive attach='geometry' object={child.geometry} />
         <primitive attach='material' object={material} />
       </mesh>
-      {/* <lineSegments>
-        <edgesGeometry attach='geometry' args={[child.geometry]} />
-        <primitive attach='material' object={edgesMaterial} />
-      </lineSegments> */}
     </group>
   )),
-  square: (
-    <>
-      <primitive attach='geometry' object={squareGeometry} />
-      {/* <lineSegments>
-        <edgesGeometry attach='geometry' args={[squareGeometry]} />
-        <primitive attach='material' object={edgesMaterial} />
-      </lineSegments> */}
-    </>
-  ),
-  torus: (
-    <>
-      <torusGeometry attach='geometry' args={[3, 0.5, 7, 15]} />
-      {/* <lineSegments>
-        <edgesGeometry attach='geometry' args={[new TorusGeometry(3, 0.5, 3, 20)]} />
-        <primitive attach='material' object={edgesMaterial} />
-      </lineSegments> */}
-    </>
-  ),
+  triangle: <torusGeometry attach='geometry' args={[3, 0.5, 7, 3]} />,
+  torus: <torusGeometry attach='geometry' args={[3, 0.5, 7, 15]} />,
 };
 
 const Effects = ({ children }) => {
   return (
     <EffectComposer>
-      {/* <Pixelation granularity={12} /> */}
-      {/* <DepthOfField focusDistance={2} focalLength={0} bokehScale={10} height={200} /> */}
       <Glitch
         delay={[3, 7]}
         duration={[0.1, 0.2]}
@@ -122,7 +98,17 @@ function Background3DModel({ shape }) {
         animate={{ opacity: isModelReady ? 1 : 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Canvas linear flat camera={{ position: [0, 0, 7] }} gl={{ alpha: true }}>
+        <Canvas
+          linear
+          flat
+          camera={{ position: [0, 0, 7] }}
+          gl={{
+            antialias: false,
+            powerPreference: "high-performance",
+            stencil: false,
+            depth: false,
+          }}
+        >
           <Effects>
             <Model shape={shape} setIsModelReady={setIsModelReady} />
           </Effects>
