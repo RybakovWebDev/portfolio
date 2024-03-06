@@ -1,0 +1,233 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page {
+  width: 80vw;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 5rem 0 0 0;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.description {
+  margin: 0 0 5rem 0;
+  width: 60%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.section {
+  margin: 3rem 0 0 0;
+  width: 100%;
+}
+
+.section h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.section p {
+  font-size: 18px;
+}
+
+.sectionTextCenterWrapper .sectionTextIntro {
+  width: 60%;
+  margin: 3rem 0 10rem 0;
+  font-size: 20px;
+}
+
+.sectionNameWrapperLeft,
+.sectionNameWrapperRight {
+  margin: 0 0 3rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.lineWrapper {
+  width: 10rem;
+  overflow: hidden;
+}
+
+.sideBySide,
+.sideBySideReversed {
+  margin: 5rem 0 5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.sideBySideLeftWrapper,
+.sideBySideRightWrapper {
+  width: 50%;
+  min-height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionNameWrapperRight {
+  justify-content: flex-end;
+}
+
+.sectionTextCenterWrapper {
+  display: flex;
+  justify-content: center;
+}
+.sectionTextCenterWrapper p,
+.sectionTextLeftWrapper p,
+.sectionTextRightWrapper p {
+  width: 80%;
+}
+
+.sectionTextLeftWrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.sectionTextRightWrapper {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.sectionTextChallengeWrapper {
+  display: flex;
+}
+
+.sectionTextChallenge {
+  margin: 0 0 2rem 0;
+}
+
+.sectionTextStack {
+  width: 70%;
+}
+
+.iconWrapper {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1430px) {
+  .page {
+    width: 85%;
+  }
+  .description {
+    margin: 0 0 3rem 0;
+    width: 100%;
+  }
+
+  .sectionTextCenterWrapper .sectionTextIntro {
+    margin: 3rem 0 3rem 0;
+  }
+
+  .sectionNameWrapperLeft,
+  .sectionNameWrapperRight {
+    margin: 0 0 3rem 0;
+  }
+
+  .sectionNameWrapperLeft {
+    justify-content: flex-end;
+  }
+
+  .sectionNameWrapperRight {
+    justify-content: flex-start;
+  }
+
+  .lineWrapper {
+    min-width: 1rem;
+    width: 20vw;
+    max-width: 10rem;
+  }
+
+  .section {
+    margin: 0;
+  }
+
+  .section h2 {
+    font-size: clamp(16px, 5vw, 30px);
+  }
+
+  .section p,
+  .sectionTextCenterWrapper .sectionTextIntro {
+    font-size: clamp(15px, 5vw, 18px);
+  }
+
+  .sideBySide,
+  .sideBySideReversed {
+    margin: 0;
+  }
+
+  .sideBySide {
+    flex-direction: column;
+  }
+
+  .sideBySideReversed {
+    flex-direction: column-reverse;
+  }
+
+  .sectionTextCenterWrapper .sectionTextIntro,
+  .sideBySide .sideBySideLeftWrapper,
+  .sideBySide .sideBySideRightWrapper,
+  .sideBySideReversed .sideBySideLeftWrapper,
+  .sideBySideReversed .sideBySideRightWrapper,
+  .section p {
+    width: 100%;
+  }
+
+  .sectionTextRightWrapper,
+  .sectionTextLeftWrapper {
+    margin: 0 0 2rem 0;
+  }
+
+  .sideBySideLeftWrapper,
+  .sideBySideRightWrapper {
+    width: 90%;
+  }
+
+  .sectionTextLeftWrapper,
+  .sectionTextRightWrapper {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sideBySideLeftWrapper .sectionTextLeftWrapper,
+  .sideBySideRightWrapper .sectionTextRightWrapper {
+    margin: 3rem 0 3rem 0;
+  }
+}
+
+@media (min-width: 750px) {
+  .sectionTextCenterWrapper .sectionTextIntro,
+  .sideBySide .sideBySideLeftWrapper,
+  .sideBySide .sideBySideRightWrapper,
+  .sideBySideReversed .sideBySideLeftWrapper,
+  .sideBySideReversed .sideBySideRightWrapper,
+  .section p {
+    width: 80%;
+  }
+}

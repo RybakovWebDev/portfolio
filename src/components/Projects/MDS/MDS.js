@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
 
-import styles from "./MDS.module.css";
+import styles from "../projects.module.css";
+import MDSStyles from "./MDS.module.css";
 
 import SectionNameLine from "@/components/SectionNameLine";
 import EmbedVideo from "@/components/EmbedVideo";
@@ -12,7 +13,7 @@ import BackToTop from "@/components/BackToTop";
 import NameGeneratorDemo from "@/components/NameGeneratorDemo";
 import AwsIconAnimation from "@/components/AwsIconAnimation";
 
-import { finalVerticalOffset, initialVerticalOffset, smoothSpring } from "@/constants";
+import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
 import useViewportWidth from "@/hooks/useViewportWidth";
 
@@ -214,9 +215,7 @@ function MDS() {
             </div>
           </div>
           <div className={styles.sideBySideRightWrapper}>
-            {/* TODO */}
-            {/* TMDB *animation connecting them* OMDB */}
-            <div className={styles.movieScrollWrapper}>
+            <div className={MDSStyles.movieScrollWrapper}>
               <GradientBorders rightBorder={"30px"} leftBorder={"30px"}>
                 <EmbedVideo
                   src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Movie_info_scroll_MP4_H264.mp4`}
@@ -320,7 +319,7 @@ function MDS() {
           <div className={styles.lineWrapper}>{lessonInView && <SectionNameLine fromRight={true} />}</div>
         </div>
         <div className={styles.sectionTextCenterWrapper}>
-          <div className={styles.lessonList}>
+          <div className={MDSStyles.lessonList}>
             <p ref={lessonRef}>
               Building this project was a great learning experience that challenged me to expand my web development
               skills. It improved my general understanding of how a full-stack website operates, how to organize such a

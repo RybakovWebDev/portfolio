@@ -2,7 +2,8 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import styles from "./Todolist.module.css";
+import styles from "../projects.module.css";
+import todostyles from "./Todolist.module.css";
 
 import SectionNameLine from "@/components/SectionNameLine";
 import GradientBorders from "@/components/GradientBorders";
@@ -68,7 +69,7 @@ function Todolist() {
           </div>
           <div className={styles.sideBySideRightWrapper}>
             <div className={styles.sectionTextRightWrapper}>
-              <p className={styles.sectionTextGoal}>
+              <p className={todostyles.sectionTextGoal}>
                 The main purpose of this project was getting some experience working with React without anyone holding
                 my hand, to see whether I could build a functional website on my own. To-do list seemed like the perfect
                 candidate, allowing for varying levels of complexity while not being too overwhelming as a final goal.
@@ -167,7 +168,7 @@ function Todolist() {
           <div className={styles.lineWrapper}>{lessonInView && <SectionNameLine fromRight={true} />}</div>
         </div>
         <div className={styles.sectionTextCenterWrapper}>
-          <div className={styles.lessonTextWrapper}>
+          <div className={todostyles.lessonTextWrapper}>
             <p ref={lessonRef}>
               Despite overgrowing this project a long time ago, I&apos;m very glad for doing it and allowing me to see
               what it&apos;s like to work on my own with zero guidance. I made a large amount of mistakes, but they
