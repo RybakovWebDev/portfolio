@@ -101,7 +101,7 @@ function ContactForm() {
           animate={{ opacity: formShown ? 0 : 0.8, y: 0 }}
         >
           <AnimatePresence>
-            {hovered && !formShown && (
+            {!formShown && (
               <m.div
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 0.8, y: 0, transition: { delay: 0.1 } }}
@@ -109,11 +109,15 @@ function ContactForm() {
               >
                 <m.div
                   initial={{ y: 0 }}
-                  animate={{
-                    y: [0, -10, 0],
-                    opacity: [0.5, 1, 0.5],
-                    transition: { duration: 1, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.5 },
-                  }}
+                  animate={
+                    hovered
+                      ? {
+                          y: [0, -10, 0],
+                          opacity: [0.5, 1, 0.5],
+                          transition: { duration: 1, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.5 },
+                        }
+                      : {}
+                  }
                   exit={{ y: -20 }}
                 >
                   <ArrowUp size={30} strokeWidth={1} />
@@ -121,7 +125,7 @@ function ContactForm() {
               </m.div>
             )}
           </AnimatePresence>
-          Contact Form
+          Open Contact Form
           <AnimatePresence>
             {hovered && (
               <m.div

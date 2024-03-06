@@ -55,11 +55,19 @@ function Projects({ ...props }) {
             exit={{ opacity: 0, x: animationDirection }}
             transition={{ type: "spring", damping: 50, stiffness: 700 }}
           >
-            <div className={styles.imageWrapper}>
-              <GradientBorders topBorder={50} rightBorder={50} bottomBorder={50} leftBorder={50}>
-                <Image className={styles.image} src={selectedProject.media} alt='Project preview' fill sizes='600px' />
-              </GradientBorders>
-            </div>
+            <Link href={`/${selectedProject.slug}`} aria-label='Open detailed project information'>
+              <div className={styles.imageWrapper}>
+                <GradientBorders topBorder={50} rightBorder={50} bottomBorder={50} leftBorder={50}>
+                  <Image
+                    className={styles.image}
+                    src={selectedProject.media}
+                    alt='Project preview'
+                    fill
+                    sizes={window.innerHeight > 1000 ? "600px" : "400px"}
+                  />
+                </GradientBorders>
+              </div>
+            </Link>
 
             <div className={styles.infoWrapper}>
               <h2 className={styles.title}>{selectedProject.title}</h2>
@@ -76,7 +84,7 @@ function Projects({ ...props }) {
                   whileHover={{ borderBottom: "6px solid rgba(var(--color-underline), 0.8)" }}
                   transition={{ duration: 0.1 }}
                 >
-                  Details
+                  More information
                 </m.span>
               </Link>
             </div>
