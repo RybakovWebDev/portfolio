@@ -26,3 +26,10 @@
   right: 0;
   bottom: 5rem;
 }
+
+@media (max-width: 1430px) {
+  .modelRight:nth-child(3) {
+    right: 0;
+    bottom: 15vh;
+  }
+}
