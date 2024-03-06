@@ -8,15 +8,21 @@ import { useRefsContext } from "@/contexts/RefsContext";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MDS from "@/components/Projects/MDS";
+import Todolist from "@/components/Projects/Todolist";
 
 import { PROJECTS } from "@/constants";
+
+const projectComponents = {
+  MDS: MDS,
+  Todolist: Todolist,
+};
 
 const ProjectPage = ({ params }) => {
   const router = useRouter();
   const { headerRef } = useRefsContext();
 
   const project = PROJECTS.filter((p) => p.slug === params.projectSlug)[0];
-  const ProjectWrapper = project.component;
 
   useEffect(() => {
     if (!project) {
@@ -27,6 +33,8 @@ const ProjectPage = ({ params }) => {
   if (!project) {
     return null;
   }
+
+  const ProjectWrapper = projectComponents[project.slug];
 
   return (
     <article className={styles.wrapper}>

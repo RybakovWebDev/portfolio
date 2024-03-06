@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useInView } from "framer-motion";
 
 import styles from "../projects.module.css";

@@ -28,11 +28,11 @@ function BackToTop() {
             whileTap={{ scale: 0.8 }}
             whileHover={{
               opacity: 1,
-              background: "rgb(0, 0, 0, 0.1)",
+              background: "var(--color-background-secondary)",
             }}
             animate={{
               opacity: 0.3,
-              background: "rgb(0, 0, 0, 0.1)",
+              background: "var(--color-background-secondary)",
             }}
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}

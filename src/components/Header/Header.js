@@ -10,6 +10,7 @@ import { useRefsContext } from "@/contexts/RefsContext";
 
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
+import DarkmodeToggle from "../DarkmodeToggle";
 
 const animationFinished = { opacity: 1, scale: 1 };
 
@@ -60,9 +61,12 @@ function Header() {
 
   return (
     <header ref={headerRef} className={styles.header}>
-      <Link href={"/"}>
-        <h2 className={styles.initials}>AR</h2>
-      </Link>
+      <div className={styles.leftWrapper}>
+        <Link href={"/"}>
+          <h2 className={styles.initials}>AR</h2>
+        </Link>
+        <DarkmodeToggle />
+      </div>
       <nav onMouseLeave={() => setHoveredNavItem(null)}>
         <ul className={styles.ul}>
           {NAVLINKS.map((l) => {

@@ -6,8 +6,30 @@ import CodePipelineIcon from "../public/images/aws-icons/CodePipeline.webp";
 import EC2Icon from "../public/images/aws-icons/EC2.webp";
 import EBIcon from "../public/images/aws-icons/Elastic Beanstalk.webp";
 import S3Icon from "../public/images/aws-icons/Simple Storage Service.webp";
-import Todolist from "./components/Projects/Todolist";
-import MDS from "./components/Projects/MDS";
+
+export const PROJECTS = [
+  {
+    title: "MDS",
+    slug: "MDS",
+    description: "Full-stack website for looking up information related to films.",
+    stack: "MERN",
+    media: "/images/projects/App_Demo_Screenshot_MDS.webp",
+    mediaHomePageMP4: "Homepage_H264_MP4.mp4",
+    year: "2023",
+    github: "https://github.com/RybakovWebDev/MDS",
+    live: "https://main.d3agl6wdyl1nit.amplifyapp.com/",
+  },
+  {
+    title: "To-do List",
+    slug: "Todolist",
+    description: "Minimalistic to-do list.",
+    stack: "React",
+    media: "/images/projects/App_Demo_Screenshot_ToDo.webp",
+    year: "2022",
+    github: "https://github.com/RybakovWebDev/todo-list-react-2022",
+    live: "https://todo-list-react-2022.pages.dev/",
+  },
+];
 
 export const NAVLINKS = [
   {
@@ -42,32 +64,6 @@ export const CONTACTS = [
     title: "Email",
     link: "mailto:contact@rybakov.dev",
     icon: <Mail size={30} strokeWidth={1} />,
-  },
-];
-
-export const PROJECTS = [
-  {
-    title: "MDS",
-    slug: "MDS",
-    description: "Full-stack website for looking up information related to films.",
-    stack: "MERN",
-    media: "/images/projects/App_Demo_Screenshot_MDS.webp",
-    mediaHomePageMP4: "Homepage_H264_MP4.mp4",
-    year: "2023",
-    github: "https://github.com/RybakovWebDev/MDS",
-    live: "https://main.d3agl6wdyl1nit.amplifyapp.com/",
-    component: MDS,
-  },
-  {
-    title: "To-do List",
-    slug: "Todolist",
-    description: "Minimalistic to-do list.",
-    stack: "React",
-    media: "/images/projects/App_Demo_Screenshot_ToDo.webp",
-    year: "2022",
-    github: "https://github.com/RybakovWebDev/todo-list-react-2022",
-    live: "https://todo-list-react-2022.pages.dev/",
-    component: Todolist,
   },
 ];
 
@@ -151,4 +147,26 @@ export const duration300 = {
 
 export const duration500 = {
   duration: 0.5,
+};
+
+export const LIGHT_COLORS = {
+  "--color-text": "hsl(0 0% 0%)",
+  "--color-text-secondary": "hsl(0 0% 0%)",
+  "--color-underline": "0, 0, 0",
+  "--color-background": "hsl(0 0% 92%)",
+  "--color-background-secondary": "hsla(0, 0%, 0%, 0.1)",
+  "--color-gradient-hue": "0",
+  "--color-gradient-saturation": "0%",
+  "--color-gradient-lightness": "92%",
+};
+
+export const DARK_COLORS = {
+  "--color-text": "hsl(0 0% 92%)",
+  "--color-text-secondary": "hsl(0 0% 0%)",
+  "--color-underline": "250, 250, 250",
+  "--color-background": "hsl(0 0% 8%)",
+  "--color-background-secondary": "hsla(0, 0%, 80%, 0.4)",
+  "--color-gradient-hue": "0",
+  "--color-gradient-saturation": "0%",
+  "--color-gradient-lightness": "8%",
 };

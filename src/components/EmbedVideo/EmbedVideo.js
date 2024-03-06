@@ -49,25 +49,3 @@ function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
 }
 
 export default EmbedVideo;
-
-// <div className={styles.videoWrapper} style={{ height: height }}>
-//   {!isLoaded && showSpinner && (
-//     <div className={styles.spinnerWrapper}>
-//       <Spinner timeout={1500} />
-//     </div>
-//   )}
-//   <motion.video
-//     ref={videoRef}
-//     src={src}
-//     width={width}
-//     height={height}
-//     autoPlay
-//     loop
-//     muted
-//     preload='auto'
-//     initial={{ opacity: 0, y: 20 }}
-//     animate={{ opacity: isInView && isLoaded ? [0, 1] : 0, y: isInView ? 0 : 20 }}
-//     transition={({ duration: 0.3 }, smoothSpring)}
-//     onLoadedData={handleLoadedData}
-//   />
-// </div>;

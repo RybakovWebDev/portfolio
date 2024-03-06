@@ -38,13 +38,19 @@
     width: auto;
     justify-content: flex-start;
     line-height: 1;
-    font-size: clamp(4rem, 25vw, 20rem);
+    font-size: clamp(4rem, 25vw, 19rem);
   }
 
   .hero h2 {
-    font-size: 6vw;
+    font-size: clamp(1rem, 6vw, 3rem);
   }
 
+  .introductionEnd {
+    margin: 0.7rem 0 0 0;
+  }
+}
+
+@media (max-width: 820px) {
   .introductionEnd {
     margin: 0.7rem 0 0 0;
     text-align: left;

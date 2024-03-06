@@ -72,8 +72,8 @@ function Projects({ ...props }) {
                 className={styles.detailsBtn}
               >
                 <m.span
-                  initial={{ borderBottom: "2px solid rgb(0, 0, 0, 0.3)" }}
-                  whileHover={{ borderBottom: "6px solid rgb(0, 0, 0, 0.8)" }}
+                  initial={{ borderBottom: "2px solid rgba(var(--color-underline), 0.3)" }}
+                  whileHover={{ borderBottom: "6px solid rgba(var(--color-underline), 0.8)" }}
                   transition={{ duration: 0.1 }}
                 >
                   Details

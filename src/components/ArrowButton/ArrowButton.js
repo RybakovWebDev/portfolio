@@ -16,7 +16,7 @@ function ArrowButton({ direction, action, isVisible }) {
         onTouchEnd={action}
         whileTap={{ scale: 0.8 }}
         whileHover={{
-          background: "rgb(0, 0, 0, 0.1)",
+          background: "var(--color-background-secondary)",
         }}
         animate={{
           opacity: 1,

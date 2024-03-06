@@ -27,22 +27,22 @@
   top: 0px;
   background: linear-gradient(
     to bottom,
-    hsl(0, 0%, 92%) 0%,
-    hsla(0, 0%, 92%, 0.987) 0%,
-    hsla(0, 0%, 92%, 0.951) 0.2%,
-    hsla(0, 0%, 92%, 0.896) 0.8%,
-    hsla(0, 0%, 92%, 0.825) 1.9%,
-    hsla(0, 0%, 92%, 0.741) 3.7%,
-    hsla(0, 0%, 92%, 0.648) 6.4%,
-    hsla(0, 0%, 92%, 0.55) 10.2%,
-    hsla(0, 0%, 92%, 0.45) 15.2%,
-    hsla(0, 0%, 92%, 0.352) 21.6%,
-    hsla(0, 0%, 92%, 0.259) 29.6%,
-    hsla(0, 0%, 92%, 0.175) 39.4%,
-    hsla(0, 0%, 92%, 0.104) 51.2%,
-    hsla(0, 0%, 92%, 0.049) 65.1%,
-    hsla(0, 0%, 92%, 0.013) 81.3%,
-    hsla(0, 0%, 92%, 0) 100%
+    hsl(0, 0%, var(--color-gradient-lightness)) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.987) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.951) 0.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.896) 0.8%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.825) 1.9%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.741) 3.7%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.648) 6.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.55) 10.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.45) 15.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.352) 21.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.259) 29.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.175) 39.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.104) 51.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.049) 65.1%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.013) 81.3%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0) 100%
   );
 }
 
@@ -50,22 +50,22 @@
   bottom: -0px;
   background: linear-gradient(
     to top,
-    hsl(0, 0%, 92%) 0%,
-    hsla(0, 0%, 92%, 0.987) 0%,
-    hsla(0, 0%, 92%, 0.951) 0.2%,
-    hsla(0, 0%, 92%, 0.896) 0.8%,
-    hsla(0, 0%, 92%, 0.825) 1.9%,
-    hsla(0, 0%, 92%, 0.741) 3.7%,
-    hsla(0, 0%, 92%, 0.648) 6.4%,
-    hsla(0, 0%, 92%, 0.55) 10.2%,
-    hsla(0, 0%, 92%, 0.45) 15.2%,
-    hsla(0, 0%, 92%, 0.352) 21.6%,
-    hsla(0, 0%, 92%, 0.259) 29.6%,
-    hsla(0, 0%, 92%, 0.175) 39.4%,
-    hsla(0, 0%, 92%, 0.104) 51.2%,
-    hsla(0, 0%, 92%, 0.049) 65.1%,
-    hsla(0, 0%, 92%, 0.013) 81.3%,
-    hsla(0, 0%, 92%, 0) 100%
+    hsl(0, 0%, var(--color-gradient-lightness)) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.987) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.951) 0.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.896) 0.8%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.825) 1.9%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.741) 3.7%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.648) 6.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.55) 10.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.45) 15.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.352) 21.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.259) 29.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.175) 39.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.104) 51.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.049) 65.1%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.013) 81.3%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0) 100%
   );
 }
 
@@ -73,22 +73,22 @@
   left: -0px;
   background: linear-gradient(
     to right,
-    hsl(0, 0%, 92%) 0%,
-    hsla(0, 0%, 92%, 0.987) 0%,
-    hsla(0, 0%, 92%, 0.951) 0.2%,
-    hsla(0, 0%, 92%, 0.896) 0.8%,
-    hsla(0, 0%, 92%, 0.825) 1.9%,
-    hsla(0, 0%, 92%, 0.741) 3.7%,
-    hsla(0, 0%, 92%, 0.648) 6.4%,
-    hsla(0, 0%, 92%, 0.55) 10.2%,
-    hsla(0, 0%, 92%, 0.45) 15.2%,
-    hsla(0, 0%, 92%, 0.352) 21.6%,
-    hsla(0, 0%, 92%, 0.259) 29.6%,
-    hsla(0, 0%, 92%, 0.175) 39.4%,
-    hsla(0, 0%, 92%, 0.104) 51.2%,
-    hsla(0, 0%, 92%, 0.049) 65.1%,
-    hsla(0, 0%, 92%, 0.013) 81.3%,
-    hsla(0, 0%, 92%, 0) 100%
+    hsl(0, 0%, var(--color-gradient-lightness)) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.987) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.951) 0.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.896) 0.8%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.825) 1.9%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.741) 3.7%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.648) 6.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.55) 10.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.45) 15.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.352) 21.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.259) 29.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.175) 39.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.104) 51.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.049) 65.1%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.013) 81.3%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0) 100%
   );
 }
 
@@ -96,21 +96,21 @@
   right: -0px;
   background: linear-gradient(
     to left,
-    hsl(0, 0%, 92%) 0%,
-    hsla(0, 0%, 92%, 0.987) 0%,
-    hsla(0, 0%, 92%, 0.951) 0.2%,
-    hsla(0, 0%, 92%, 0.896) 0.8%,
-    hsla(0, 0%, 92%, 0.825) 1.9%,
-    hsla(0, 0%, 92%, 0.741) 3.7%,
-    hsla(0, 0%, 92%, 0.648) 6.4%,
-    hsla(0, 0%, 92%, 0.55) 10.2%,
-    hsla(0, 0%, 92%, 0.45) 15.2%,
-    hsla(0, 0%, 92%, 0.352) 21.6%,
-    hsla(0, 0%, 92%, 0.259) 29.6%,
-    hsla(0, 0%, 92%, 0.175) 39.4%,
-    hsla(0, 0%, 92%, 0.104) 51.2%,
-    hsla(0, 0%, 92%, 0.049) 65.1%,
-    hsla(0, 0%, 92%, 0.013) 81.3%,
-    hsla(0, 0%, 92%, 0) 100%
+    hsl(0, 0%, var(--color-gradient-lightness)) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.987) 0%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.951) 0.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.896) 0.8%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.825) 1.9%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.741) 3.7%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.648) 6.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.55) 10.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.45) 15.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.352) 21.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.259) 29.6%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.175) 39.4%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.104) 51.2%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.049) 65.1%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0.013) 81.3%,
+    hsla(0, 0%, var(--color-gradient-lightness), 0) 100%
   );
 }

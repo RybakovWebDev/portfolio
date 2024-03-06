@@ -13,17 +13,17 @@ import BackToTop from "@/components/BackToTop";
 import NameGeneratorDemo from "@/components/NameGeneratorDemo";
 import AwsIconAnimation from "@/components/AwsIconAnimation";
 
+import useViewportWidth from "@/hooks/useViewportWidth";
 import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
-import useViewportWidth from "@/hooks/useViewportWidth";
 
 function MDS() {
+  const viewportWidth = useViewportWidth();
+
   const goalRef = useRef();
   const challengeRef = useRef();
   const nameDemoRef = useRef();
   const lessonRef = useRef();
-
-  const viewportWidth = useViewportWidth();
 
   const goalInView = useInView(goalRef, { once: true });
   const challengeInView = useInView(challengeRef, { once: true });

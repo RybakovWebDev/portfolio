@@ -7,7 +7,8 @@ function SectionNameLine({ fromRight }) {
       <m.div
         animate={{
           width: "100%",
-          backgroundColor: "rgb(0, 0, 0, 0.3)",
+          backgroundColor: "var(--color-text)",
+          opacity: 0.3,
           x: 0,
         }}
         initial={{ height: "5px", x: fromRight ? 300 : -300 }}
