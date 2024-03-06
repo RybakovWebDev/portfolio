@@ -53,7 +53,7 @@ function ContactForm() {
 
   const handleOpenForm = () => {
     !formShown && setformShown(!formShown);
-    console.log("opening form");
+
     if (window.innerWidth < 1430) {
       setTimeout(() => {
         scrollToRef(formRef);
