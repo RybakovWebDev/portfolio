@@ -2,19 +2,24 @@
 import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
 
 import styles from "./AboutMe.module.css";
+
 import { finalVerticalOffset, initialVerticalOffset, smoothSpring } from "@/constants";
 import { useRefsContext } from "@/contexts/RefsContext";
 
 function AboutMe() {
-  const { aboutRef } = useRefsContext();
-  const aboutIsInView = useInView(aboutRef);
+  const { headerRef, aboutRef } = useRefsContext();
+  const headerIsInView = useInView(headerRef, { once: false });
+  const aboutIsInView = useInView(aboutRef, { once: true, amount: 0.3 });
+
+  const shouldAnimate = aboutIsInView && !headerIsInView;
+
   return (
     <LazyMotion features={domAnimation}>
       <m.section
         ref={aboutRef}
         className={styles.wrapper}
         initial={initialVerticalOffset}
-        animate={aboutIsInView && finalVerticalOffset}
+        animate={shouldAnimate && finalVerticalOffset}
         transition={smoothSpring}
       >
         <p className={styles.text}>
