@@ -58,5 +58,5 @@ export const calculateVideoHeight = (viewportWidth, maxHeight, minHeight = 125) 
   videoHeight = Math.max(minHeight, Math.min(maxHeight, videoHeight));
 
   // Round the video height to the nearest whole number
-  return viewportWidth > 1430 ? maxHeight : Math.round(videoHeight);
+  return viewportWidth > 1430 || !viewportWidth ? maxHeight : Math.round(videoHeight);
 };

@@ -10,7 +10,7 @@ import GradientBorders from "@/components/GradientBorders";
 import EmbedVideo from "@/components/EmbedVideo";
 import BackToTop from "@/components/BackToTop";
 
-import useViewportWidth from "@/hooks/useViewportWidth";
+import useViewportSize from "@/hooks/useViewportSize";
 import { calculateVideoHeight } from "@/helpers";
 
 function Todolist() {
@@ -19,7 +19,9 @@ function Todolist() {
   const heroRef = useRef();
   const lessonRef = useRef();
 
-  const viewportWidth = useViewportWidth();
+  const viewportSize = useViewportSize();
+
+  console.log(viewportSize.width);
 
   const goalInView = useInView(goalRef, { once: true });
   const challengeInView = useInView(challengeRef, { once: true });
@@ -30,12 +32,12 @@ function Todolist() {
       <h1 className={styles.title}>To-do List</h1>
       <p className={styles.description}>A simple, minimalist, responsive React to-do list.</p>
       <GradientBorders
-        leftBorder={viewportWidth > 1430 ? "220px" : "100px"}
-        rightBorder={viewportWidth > 1430 ? "220px" : "100px"}
+        leftBorder={viewportSize.width > 1430 ? "220px" : "100px"}
+        rightBorder={viewportSize.width > 1430 ? "220px" : "100px"}
       >
         <EmbedVideo
           src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Todolist_Homepage_MP4_H264.mp4`}
-          height={calculateVideoHeight(viewportWidth, 650, 250)}
+          height={calculateVideoHeight(viewportSize.width, 650, 250)}
           showSpinner={true}
         />
       </GradientBorders>
@@ -62,7 +64,7 @@ function Todolist() {
             <GradientBorders topBorder={"30px"} rightBorder={"30px"} bottomBorder={"30px"} leftBorder={"30px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Todolist_Adding_tasks_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 500, 250)}
+                height={calculateVideoHeight(viewportSize.width, 500, 250)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -91,7 +93,7 @@ function Todolist() {
           <h2>The Challenge</h2>
         </div>
 
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p>
@@ -107,7 +109,7 @@ function Todolist() {
             <GradientBorders topBorder={"30px"} rightBorder={"30px"} bottomBorder={"30px"} leftBorder={"30px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Todolist_Marking_removing_tasks_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 500, 250)}
+                height={calculateVideoHeight(viewportSize.width, 500, 250)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -119,7 +121,7 @@ function Todolist() {
             <GradientBorders topBorder={"30px"} rightBorder={"30px"} bottomBorder={"30px"} leftBorder={"30px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Todolist_Managing_lists_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 600, 250)}
+                height={calculateVideoHeight(viewportSize.width, 600, 250)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -136,7 +138,7 @@ function Todolist() {
           </div>
         </div>
 
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p>
@@ -154,7 +156,7 @@ function Todolist() {
             <GradientBorders topBorder={"30px"} rightBorder={"30px"} bottomBorder={"30px"} leftBorder={"30px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Todolist_Importing_list_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 600, 250)}
+                height={calculateVideoHeight(viewportSize.width, 600, 250)}
                 showSpinner={true}
               />
             </GradientBorders>

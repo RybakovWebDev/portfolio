@@ -150,14 +150,6 @@
     margin: 0 0 3rem 0;
   }
 
-  .sectionNameWrapperLeft {
-    justify-content: flex-end;
-  }
-
-  .sectionNameWrapperRight {
-    justify-content: flex-start;
-  }
-
   .lineWrapper {
     min-width: 1rem;
     width: 20vw;

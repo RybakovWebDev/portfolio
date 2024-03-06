@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./HomepageBackground.module.css";
 
 import Background3DModel from "../Background3DModel";
-import useViewportWidth from "@/hooks/useViewportWidth";
+import useViewportWidth from "@/hooks/useViewportSize";
 
 function HomepageBackground() {
   const [isLoaded, setIsLoaded] = useState(false);

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
-import { ArrowUp, X } from "react-feather";
+import { ArrowUp, ArrowUpCircle, X } from "react-feather";
 
 import styles from "./ContactForm.module.css";
 
@@ -116,11 +116,11 @@ function ContactForm() {
                           opacity: [0.5, 1, 0.5],
                           transition: { duration: 1, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.5 },
                         }
-                      : {}
+                      : { opacity: 0.5 }
                   }
                   exit={{ y: -20 }}
                 >
-                  <ArrowUp size={30} strokeWidth={1} />
+                  <ArrowUpCircle size={30} strokeWidth={1} />
                 </m.div>
               </m.div>
             )}

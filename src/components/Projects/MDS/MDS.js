@@ -13,12 +13,12 @@ import BackToTop from "@/components/BackToTop";
 import NameGeneratorDemo from "@/components/NameGeneratorDemo";
 import AwsIconAnimation from "@/components/AwsIconAnimation";
 
-import useViewportWidth from "@/hooks/useViewportWidth";
+import useViewportSize from "@/hooks/useViewportSize";
 import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
 
 function MDS() {
-  const viewportWidth = useViewportWidth();
+  const viewportSize = useViewportSize();
 
   const goalRef = useRef();
   const challengeRef = useRef();
@@ -56,7 +56,7 @@ function MDS() {
         <EmbedVideo
           src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Homepage_MP4_H264.mp4`}
           srcVP9={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Homepage_WEBM_VP9.webm`}
-          height={calculateVideoHeight(viewportWidth, 650)}
+          height={calculateVideoHeight(viewportSize.width, 650)}
           showSpinner={true}
         />
       </GradientBorders>
@@ -82,7 +82,7 @@ function MDS() {
             <GradientBorders>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Search_demo_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 435)}
+                height={calculateVideoHeight(viewportSize.width, 435)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -102,7 +102,7 @@ function MDS() {
           </div>
         </div>
 
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p>
@@ -152,7 +152,7 @@ function MDS() {
           </div>
         </div>
 
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p>
@@ -199,7 +199,7 @@ function MDS() {
           </div>
           <h2>The Challenge</h2>
         </div>
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p className={styles.sectionTextChallenge}>
@@ -219,7 +219,7 @@ function MDS() {
               <GradientBorders rightBorder={"30px"} leftBorder={"30px"}>
                 <EmbedVideo
                   src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Movie_info_scroll_MP4_H264.mp4`}
-                  height={calculateVideoHeight(viewportWidth, 550, 230)}
+                  height={calculateVideoHeight(viewportSize.width, 550, 230)}
                   showSpinner={true}
                 />
               </GradientBorders>
@@ -232,7 +232,7 @@ function MDS() {
             <GradientBorders topBorder={"30px"} bottomBorder={"30px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Watchlists_demo_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 360, 170)}
+                height={calculateVideoHeight(viewportSize.width, 360, 170)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -248,7 +248,7 @@ function MDS() {
           </div>
         </div>
 
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p>
@@ -264,7 +264,7 @@ function MDS() {
             <GradientBorders topBorder={"30px"} rightBorder={"30px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Avatar_demo_MP4_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 360, 170)}
+                height={calculateVideoHeight(viewportSize.width, 360, 170)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -276,7 +276,7 @@ function MDS() {
             <GradientBorders topBorder={"30px"} bottomBorder={"30px"} leftBorder={"30px"} rightBorder={"60px"}>
               <EmbedVideo
                 src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Chat_demo_H264.mp4`}
-                height={calculateVideoHeight(viewportWidth, 585, 270)}
+                height={calculateVideoHeight(viewportSize.width, 585, 270)}
                 showSpinner={true}
               />
             </GradientBorders>
@@ -293,7 +293,7 @@ function MDS() {
           </div>
         </div>
 
-        <div className={viewportWidth > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
+        <div className={viewportSize.width > 1430 ? styles.sideBySide : styles.sideBySideReversed}>
           <div className={styles.sideBySideLeftWrapper}>
             <div className={styles.sectionTextLeftWrapper}>
               <p>

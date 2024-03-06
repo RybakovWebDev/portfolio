@@ -13,12 +13,14 @@ import ArrowButton from "../ArrowButton";
 
 import { PROJECTS } from "@/constants";
 import { useRefsContext } from "@/contexts/RefsContext";
-import useViewportWidth from "@/hooks/useViewportWidth";
+import useViewportSize from "@/hooks/useViewportSize";
 
 function Projects({ ...props }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState(0);
-  const isSmallScreen = useViewportWidth() < 1430;
+  const viewportSize = useViewportSize();
+
+  const isSmallScreen = viewportSize.width < 1430;
 
   const { projectSelectorRef } = useRefsContext();
 
@@ -63,7 +65,7 @@ function Projects({ ...props }) {
                     src={selectedProject.media}
                     alt='Project preview'
                     fill
-                    sizes={window.innerHeight > 1000 ? "600px" : "400px"}
+                    sizes={viewportSize.height > 1000 ? "600px" : "400px"}
                   />
                 </GradientBorders>
               </div>
