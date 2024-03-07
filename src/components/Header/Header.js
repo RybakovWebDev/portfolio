@@ -17,7 +17,7 @@ const animationFinished = { opacity: 1, scale: 1 };
 function Header({ initialTheme }) {
   const [hoveredNavItem, setHoveredNavItem] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const { headerRef, projectSelectorRef, aboutRef, footerRef } = useRefsContext();
+  const { headerRef, projectNameRef, aboutRef, footerRef } = useRefsContext();
 
   const router = useRouter();
   const pathname = usePathname();
@@ -35,7 +35,7 @@ function Header({ initialTheme }) {
     const hash = window.location.hash;
 
     if (hash === "#projects") {
-      scrollToRef(projectSelectorRef);
+      scrollToRef(projectNameRef);
     } else if (hash === "#about") {
       scrollToRef(aboutRef);
     } else if (hash === "#contact") {
@@ -50,7 +50,7 @@ function Header({ initialTheme }) {
 
     if (pathname === "/") {
       if (slug === "projects") {
-        scrollToRef(projectSelectorRef);
+        scrollToRef(projectNameRef);
       } else if (slug === "about") {
         scrollToRef(aboutRef);
       } else if (slug === "contact") {

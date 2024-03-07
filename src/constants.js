@@ -155,8 +155,6 @@ export const LIGHT_COLORS = {
   "--color-underline": "0, 0, 0",
   "--color-background": "hsl(0 0% 92%)",
   "--color-background-secondary": "hsla(0, 0%, 0%, 0.1)",
-  "--color-gradient-hue": "0",
-  "--color-gradient-saturation": "0%",
   "--color-gradient-lightness": "92%",
 };
 
@@ -166,7 +164,5 @@ export const DARK_COLORS = {
   "--color-underline": "250, 250, 250",
   "--color-background": "hsl(0 0% 8%)",
   "--color-background-secondary": "hsla(0, 0%, 80%, 0.4)",
-  "--color-gradient-hue": "0",
-  "--color-gradient-saturation": "0%",
   "--color-gradient-lightness": "8%",
 };

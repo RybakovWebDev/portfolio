@@ -35,10 +35,11 @@ export const createXShape = (material) => {
 };
 
 export const scrollToRef = (ref) => {
+  const isProjectSelector = ref.current.className.includes("ProjectSelector");
   const smallScreen = window.innerWidth < 1430;
   ref.current.scrollIntoView({
     behavior: "smooth",
-    block: smallScreen ? "start" : "center",
+    block: smallScreen && !isProjectSelector ? "start" : "center",
   });
   window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
 };

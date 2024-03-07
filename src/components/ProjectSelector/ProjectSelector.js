@@ -22,7 +22,7 @@ function Projects({ ...props }) {
 
   const isSmallScreen = viewportSize.width < 1430;
 
-  const { projectSelectorRef } = useRefsContext();
+  const { projectSelectorRef, projectNameRef } = useRefsContext();
 
   const isInView = useInView(projectSelectorRef, { once: true });
   const selectedProject = PROJECTS[currentIndex];
@@ -71,7 +71,7 @@ function Projects({ ...props }) {
               </div>
             </Link>
 
-            <div className={styles.infoWrapper}>
+            <div ref={projectNameRef} className={styles.infoWrapper}>
               <h2 className={styles.title}>{selectedProject.title}</h2>
               <p className={styles.year}>{selectedProject.year}</p>
               <p className={styles.description}>{selectedProject.description}</p>

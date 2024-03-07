@@ -2,7 +2,6 @@ import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-
 import { RefsProvider } from "@/contexts/RefsContext";
 
 import Header from "@/components/Header";

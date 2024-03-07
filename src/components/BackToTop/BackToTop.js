@@ -25,7 +25,7 @@ function BackToTop() {
             className={styles.backBtn}
             onClick={(e) => handleLinkClick(e)}
             onTap={(e) => handleLinkClick(e)}
-            whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 0.9 }}
             whileHover={{
               opacity: 1,
               background: "var(--color-background-secondary)",
