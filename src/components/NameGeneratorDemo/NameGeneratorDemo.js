@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 import { motion, useAnimation } from "framer-motion";

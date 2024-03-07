@@ -315,7 +315,7 @@ function MDS() {
               </div>
             </div>
             <div ref={nameDemoRef} className={styles.sideBySideRightWrapper}>
-              {nameDemoInView && (
+              {(nameDemoInView || viewportSize.width < 600) && (
                 <div className={styles.fadeIn}>
                   <NameGeneratorDemo />
                 </div>
