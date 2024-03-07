@@ -38,7 +38,6 @@ const ProjectPage = ({ params }) => {
 
   return (
     <article className={styles.wrapper}>
-      <Header />
       <ProjectWrapper topRef={headerRef} />
       <div className={styles.footerWrapper}>
         <Footer />

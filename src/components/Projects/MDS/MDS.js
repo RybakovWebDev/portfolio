@@ -1,6 +1,7 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Cookies from "js-cookie";
 import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
 
 import styles from "../projects.module.css";
@@ -18,6 +19,7 @@ import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
 
 function MDS() {
+  const [theme, setTheme] = useState();
   const viewportSize = useViewportSize();
 
   const goalRef = useRef();
@@ -29,6 +31,10 @@ function MDS() {
   const challengeInView = useInView(challengeRef, { once: true });
   const nameDemoInView = useInView(nameDemoRef, { once: true });
   const lessonInView = useInView(lessonRef, { once: true });
+
+  useEffect(() => {
+    setTheme(Cookies.get("color-theme"));
+  }, [setTheme]);
 
   const container = {
     hidden: initialVerticalOffset,
@@ -174,8 +180,9 @@ function MDS() {
             <div className={styles.sideBySideLeftWrapper}>
               <div className={styles.iconWrapper}>
                 <Image
+                  key={theme}
                   className={styles.fadeIn}
-                  src={"/images/icons/MongoDB_Logo.svg"}
+                  src={`/images/icons/MongoDB_${theme === "light" ? "SlateBlue" : "White"}.webp`}
                   alt='MongoDB logo'
                   fill
                   sizes='200px'

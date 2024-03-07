@@ -13,7 +13,6 @@ import HomepageBackground from "@/components/HomepageBackground";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Header />
       <Hero />
       <AboutMe />
       <ProjectSelector />

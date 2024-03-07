@@ -121,6 +121,10 @@
   position: relative;
 }
 
+.iconWrapper img {
+  object-fit: contain;
+}
+
 .fadeIn {
   opacity: 0;
   animation: fade-in 500ms forwards;

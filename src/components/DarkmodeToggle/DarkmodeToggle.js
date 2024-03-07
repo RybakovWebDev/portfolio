@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Cookies from "js-cookie";
 
@@ -7,10 +8,7 @@ import styles from "./DarkmodeToggle.module.css";
 
 import { LIGHT_COLORS, DARK_COLORS } from "@/constants";
 
-const savedTheme = Cookies.get("color-theme");
-const initialTheme = savedTheme?.value || "light";
-
-function DarkmodeToggle() {
+function DarkmodeToggle({ initialTheme }) {
   const [theme, setTheme] = useState(initialTheme);
 
   function handleClick() {

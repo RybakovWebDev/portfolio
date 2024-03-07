@@ -14,7 +14,6 @@ function ArrowButton({ direction, action, isVisible }) {
         className={styles.switchProjectButton}
         onClick={action}
         onTouchEnd={action}
-        whileTap={{ scale: 0.8 }}
         whileHover={{
           background: "var(--color-background-secondary)",
           opacity: 0.8,
@@ -27,6 +26,7 @@ function ArrowButton({ direction, action, isVisible }) {
       >
         <m.div
           className={styles.iconWrapper}
+          whileTap={{ x: direction === "next" ? 15 : -15 }}
           whileHover={{
             x: [0, direction === "next" ? 15 : -15, 0],
             transition: shevronAnimation,

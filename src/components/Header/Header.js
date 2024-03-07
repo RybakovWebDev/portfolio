@@ -14,7 +14,7 @@ import DarkmodeToggle from "../DarkmodeToggle";
 
 const animationFinished = { opacity: 1, scale: 1 };
 
-function Header() {
+function Header({ initialTheme }) {
   const [hoveredNavItem, setHoveredNavItem] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const { headerRef, projectSelectorRef, aboutRef, footerRef } = useRefsContext();
@@ -65,7 +65,7 @@ function Header() {
         <Link href={"/"}>
           <h2 className={styles.initials}>AR</h2>
         </Link>
-        <DarkmodeToggle />
+        <DarkmodeToggle initialTheme={initialTheme} />
       </div>
       <nav onMouseLeave={() => setHoveredNavItem(null)}>
         <ul className={styles.ul}>

@@ -2,9 +2,11 @@ import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import "./styles.css";
 
 import { RefsProvider } from "@/contexts/RefsContext";
+
+import Header from "@/components/Header";
+
 import { LIGHT_COLORS, DARK_COLORS } from "@/constants";
 
 const inter = Inter({ weight: "400", subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -22,7 +24,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' data-color-theme={theme} style={themeColors}>
       <body className={inter.className}>
-        <RefsProvider>{children}</RefsProvider>
+        <RefsProvider>
+          <Header initialTheme={theme} />
+          {children}
+        </RefsProvider>
       </body>
     </html>
   );
