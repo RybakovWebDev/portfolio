@@ -1,14 +1,17 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation, useInView } from "framer-motion";
 import { ArrowUp, X } from "react-feather";
 
 import styles from "./ContactForm.module.css";
 
 import { scrollToRef } from "@/helpers";
 import { useRefsContext } from "@/contexts/RefsContext";
+import useViewportSize from "@/hooks/useViewportSize";
 
 const formSpring = { type: "spring", damping: 60, stiffness: 700, restDelta: 0.01 };
+
+const formInitial = { padding: "1rem", height: "1rem", opacity: 0 };
 
 const formAnimate = {
   padding: "1rem",
@@ -33,10 +36,14 @@ function ContactForm() {
   const [errorText, setErrorText] = useState(null);
   const [messageSent, setMessageSent] = useState(false);
 
-  const { contactRef } = useRefsContext();
+  const { contactRef, footerRef } = useRefsContext();
+
+  const smallScreen = useViewportSize().width < 600;
 
   const formRef = useRef();
   const nameInputRef = useRef();
+
+  const footerInView = useInView(footerRef);
 
   const clearForm = () => {
     setNameText("");
@@ -110,7 +117,7 @@ function ContactForm() {
                 <m.div
                   initial={{ y: 0 }}
                   animate={
-                    hovered
+                    hovered || (smallScreen && footerInView)
                       ? {
                           y: [0, -10, 0],
                           opacity: [0.5, 1, 0.5],
@@ -141,125 +148,121 @@ function ContactForm() {
     );
   };
 
-  const form = () => {
-    return (
-      formShown && (
-        <LazyMotion features={domAnimation}>
-          <m.form
-            ref={formRef}
-            name='contact form'
-            className={styles.form}
-            initial={{ padding: "1rem", height: "1rem", opacity: 0 }}
-            animate={formAnimate}
-            exit={formExit}
-            onSubmit={(e) => handleSubmit(e)}
-          >
-            <div className={styles.topInputWrapper}>
-              <div className={styles.inputWrapper}>
-                <label htmlFor='name'>Your Name:</label>
-                <input
-                  ref={nameInputRef}
-                  type='text'
-                  name='name'
-                  required
-                  placeholder='Name'
-                  value={nameText}
-                  maxLength={50}
-                  onChange={(e) => setNameText(e.target.value)}
-                />
-
-                <m.button
-                  type='button'
-                  className={styles.closeButton}
-                  onClick={() => {
-                    setformShown(false);
-                    clearForm();
-                    setMessageSent(false);
-                  }}
-                  initial={{ border: "1px solid rgb(0, 0, 0, 0)" }}
-                  whileHover={{ border: "1px solid rgb(0, 0, 0, 0.3)", rotate: "90deg" }}
-                >
-                  <X size={30} strokeWidth={1} />
-                </m.button>
-              </div>
-
-              <div className={styles.inputWrapper}>
-                <label htmlFor='email'>Your contact email:</label>
-                <input
-                  type='email'
-                  name='email'
-                  required
-                  placeholder='Email'
-                  value={emailText}
-                  maxLength={50}
-                  onChange={(e) => setEmailText(e.target.value)}
-                />
-              </div>
-            </div>
-
-            <label htmlFor='message'>Your message:</label>
-            <textarea
-              name='message'
-              cols='60'
-              rows='10'
-              required
-              spellCheck
-              placeholder='Message text'
-              value={messageText}
-              onChange={(e) => setMessageText(e.target.value)}
-            />
-
-            <div className={styles.sendWrapper}>
-              <div>
-                <AnimatePresence>
-                  {errorText ? (
-                    <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                      {errorText}
-                    </m.p>
-                  ) : null}
-                </AnimatePresence>
-              </div>
-
-              <>
-                {messageSent ? (
-                  <AnimatePresence mode='wait'>
-                    <m.p
-                      key='sentMessage'
-                      className={styles.sentMessage}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    >
-                      Message sent!
-                    </m.p>
-                  </AnimatePresence>
-                ) : (
-                  <AnimatePresence mode='wait'>
-                    <m.button
-                      key='submitButton'
-                      type='submit'
-                      initial={{ border: "1px solid rgb(0, 0, 0, 0.3)", background: "rgb(0, 0, 0, 0)", opacity: 0 }}
-                      whileHover={{ background: "rgb(0, 0, 0, 0.1)" }}
-                      whileTap={{ background: "rgb(0, 0, 0, 0.3)" }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ type: "spring", damping: 80, stiffness: 700 }}
-                    >
-                      <p>Send</p>
-                    </m.button>
-                  </AnimatePresence>
-                )}
-              </>
-            </div>
-          </m.form>
-        </LazyMotion>
-      )
-    );
-  };
-
   return (
     <section ref={contactRef} className={styles.wrapper} transition={formSpring}>
-      <AnimatePresence mode='wait'>{form()}</AnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence>
+          {formShown && (
+            <m.form
+              ref={formRef}
+              name='contact form'
+              className={styles.form}
+              initial={formInitial}
+              animate={formAnimate}
+              exit={formExit}
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <div className={styles.topInputWrapper}>
+                <div className={styles.inputWrapper}>
+                  <label htmlFor='name'>Your Name:</label>
+                  <input
+                    ref={nameInputRef}
+                    type='text'
+                    name='name'
+                    required
+                    placeholder='Name'
+                    value={nameText}
+                    maxLength={50}
+                    onChange={(e) => setNameText(e.target.value)}
+                  />
+
+                  <m.button
+                    type='button'
+                    className={styles.closeButton}
+                    onClick={() => {
+                      setformShown(false);
+                      clearForm();
+                      setMessageSent(false);
+                    }}
+                    initial={{ border: "1px solid rgb(0, 0, 0, 0)" }}
+                    whileHover={{ border: "1px solid rgb(0, 0, 0, 0.3)", rotate: "90deg" }}
+                  >
+                    <X size={30} strokeWidth={1} />
+                  </m.button>
+                </div>
+
+                <div className={styles.inputWrapper}>
+                  <label htmlFor='email'>Your contact email:</label>
+                  <input
+                    type='email'
+                    name='email'
+                    required
+                    placeholder='Email'
+                    value={emailText}
+                    maxLength={50}
+                    onChange={(e) => setEmailText(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <label htmlFor='message'>Your message:</label>
+              <textarea
+                name='message'
+                cols='60'
+                rows='10'
+                required
+                spellCheck
+                placeholder='Message text'
+                value={messageText}
+                onChange={(e) => setMessageText(e.target.value)}
+              />
+
+              <div className={styles.sendWrapper}>
+                <div>
+                  <AnimatePresence>
+                    {errorText ? (
+                      <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                        {errorText}
+                      </m.p>
+                    ) : null}
+                  </AnimatePresence>
+                </div>
+
+                <>
+                  {messageSent ? (
+                    <AnimatePresence mode='wait'>
+                      <m.p
+                        key='sentMessage'
+                        className={styles.sentMessage}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      >
+                        Message sent!
+                      </m.p>
+                    </AnimatePresence>
+                  ) : (
+                    <AnimatePresence mode='wait'>
+                      <m.button
+                        key='submitButton'
+                        type='submit'
+                        initial={{ border: "1px solid rgb(0, 0, 0, 0.3)", background: "rgb(0, 0, 0, 0)", opacity: 0 }}
+                        whileHover={{ background: "rgb(0, 0, 0, 0.1)" }}
+                        whileTap={{ background: "rgb(0, 0, 0, 0.3)" }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ type: "spring", damping: 80, stiffness: 700 }}
+                      >
+                        <p>Send</p>
+                      </m.button>
+                    </AnimatePresence>
+                  )}
+                </>
+              </div>
+            </m.form>
+          )}
+        </AnimatePresence>
+      </LazyMotion>
       {openFormButton()}
     </section>
   );
