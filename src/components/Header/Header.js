@@ -7,17 +7,22 @@ import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import styles from "./Header.module.css";
 
 import { useRefsContext } from "@/contexts/RefsContext";
+import useViewportSize from "@/hooks/useViewportSize";
+
+import DarkmodeToggle from "../DarkmodeToggle";
 
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
-import DarkmodeToggle from "../DarkmodeToggle";
 
 const animationFinished = { opacity: 1, scale: 1 };
 
 function Header({ initialTheme }) {
   const [hoveredNavItem, setHoveredNavItem] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const { headerRef, projectNameRef, aboutRef, footerRef } = useRefsContext();
+
+  const smallScreen = useViewportSize().width < 1430;
+
+  const { headerRef, projectSelectorRef, projectNameRef, aboutRef, footerRef } = useRefsContext();
 
   const router = useRouter();
   const pathname = usePathname();
@@ -35,7 +40,7 @@ function Header({ initialTheme }) {
     const hash = window.location.hash;
 
     if (hash === "#projects") {
-      scrollToRef(projectNameRef);
+      scrollToRef(smallScreen ? projectNameRef : projectSelectorRef);
     } else if (hash === "#about") {
       scrollToRef(aboutRef);
     } else if (hash === "#contact") {
@@ -50,7 +55,7 @@ function Header({ initialTheme }) {
 
     if (pathname === "/") {
       if (slug === "projects") {
-        scrollToRef(projectNameRef);
+        scrollToRef(smallScreen ? projectNameRef : projectSelectorRef);
       } else if (slug === "about") {
         scrollToRef(aboutRef);
       } else if (slug === "contact") {
