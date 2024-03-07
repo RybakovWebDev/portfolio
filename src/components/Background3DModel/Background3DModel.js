@@ -24,7 +24,7 @@ const shapes = {
     </group>
   )),
   triangle: <torusGeometry attach='geometry' args={[3, 0.5, 7, 3]} />,
-  torus: <torusGeometry attach='geometry' args={[3, 0.5, 7, 15]} />,
+  torus: <torusGeometry attach='geometry' args={[3, 0.5, 7, 25]} />,
 };
 
 const Effects = ({ children }) => {

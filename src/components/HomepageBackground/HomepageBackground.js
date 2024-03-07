@@ -4,23 +4,10 @@ import { useState, useEffect } from "react";
 import styles from "./HomepageBackground.module.css";
 
 import Background3DModel from "../Background3DModel";
-import useViewportWidth from "@/hooks/useViewportSize";
+import useViewportSize from "@/hooks/useViewportSize";
 
 function HomepageBackground() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const largeScreen = useViewportWidth() > 1090;
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!isLoaded) {
-    return null;
-  }
+  const largeScreen = useViewportSize().width > 1090;
 
   return (
     <section className={styles.wrapper}>

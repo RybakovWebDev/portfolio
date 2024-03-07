@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
-import { ArrowUp, ArrowUpCircle, X } from "react-feather";
+import { ArrowUp, X } from "react-feather";
 
 import styles from "./ContactForm.module.css";
 
@@ -120,7 +120,7 @@ function ContactForm() {
                   }
                   exit={{ y: -20 }}
                 >
-                  <ArrowUpCircle size={30} strokeWidth={1} />
+                  <ArrowUp size={30} strokeWidth={1} />
                 </m.div>
               </m.div>
             )}

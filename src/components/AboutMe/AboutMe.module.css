@@ -1,6 +1,9 @@
 .wrapper {
   width: 100%;
   min-height: 30rem;
+}
+
+.wrapper div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,8 +44,8 @@
 
 @media (max-width: 1430px) {
   .text {
-    width: 70%;
+    width: 80%;
     max-width: 40rem;
-    font-size: clamp(10px, 5vw, 18px);
+    font-size: clamp(10px, 5vw, 20px);
   }
 }
