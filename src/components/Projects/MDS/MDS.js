@@ -94,7 +94,7 @@ function MDS() {
               <GradientBorders>
                 <EmbedVideo
                   src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Search_demo_MP4_H264.mp4`}
-                  height={calculateVideoHeight(viewportSize.width, 435)}
+                  height={calculateVideoHeight(viewportSize.width, 435, 200)}
                   showSpinner={true}
                 />
               </GradientBorders>

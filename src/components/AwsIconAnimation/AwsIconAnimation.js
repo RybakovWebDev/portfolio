@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { MeshBasicMaterial, TextureLoader } from "three";
@@ -16,7 +16,6 @@ function Cube({ onLoad }) {
 
   const meshRef = useRef();
   const rotationRef = useRef({ x: 0, y: 0 });
-
   const timerIdRef = useRef(null);
   const targetScaleRef = useRef(1);
 
@@ -79,6 +78,16 @@ function AwsIconAnimation() {
   const handleLoad = () => {
     setIsLoaded(true);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isLoaded) {
+        setIsLoaded(true);
+      }
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [isLoaded]);
 
   return (
     <LazyMotion features={loadFeatures}>

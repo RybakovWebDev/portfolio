@@ -140,9 +140,15 @@
   .page {
     width: 85%;
   }
+
+  .title {
+    font-size: clamp(40px, 10vw, 50px);
+  }
+
   .description {
     margin: 0 0 3rem 0;
     width: 100%;
+    font-size: clamp(15px, 8vw, 25px);
   }
 
   .sectionTextCenterWrapper .sectionTextIntro {

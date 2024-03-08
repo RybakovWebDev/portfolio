@@ -96,4 +96,8 @@
     font-size: 20px;
     font-weight: 500;
   }
+
+  .front {
+    font-size: 1rem;
+  }
 }
