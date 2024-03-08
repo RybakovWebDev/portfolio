@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
-import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
+import dynamic from "next/dynamic";
+import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "../projects.module.css";
 import todostyles from "./Todolist.module.css";
@@ -8,10 +9,14 @@ import todostyles from "./Todolist.module.css";
 import SectionNameLine from "@/components/SectionNameLine";
 import GradientBorders from "@/components/GradientBorders";
 import EmbedVideo from "@/components/EmbedVideo";
-import BackToTop from "@/components/BackToTop";
+
+const BackToTop = dynamic(() => import("@/components/BackToTop"));
 
 import useViewportSize from "@/hooks/useViewportSize";
+
 import { calculateVideoHeight } from "@/helpers";
+
+const loadFeatures = () => import("../../../features").then((res) => res.default);
 
 function Todolist() {
   const goalRef = useRef();
@@ -26,7 +31,7 @@ function Todolist() {
   const lessonInView = useInView(lessonRef, { once: true });
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.div initial={{ opacity: 0 }} animate={{ opacity: viewportSize.width ? 1 : 0 }} className={styles.page}>
         <h1 className={styles.title}>To-do List</h1>
         <p className={styles.description}>A simple, minimalist, responsive React to-do list.</p>

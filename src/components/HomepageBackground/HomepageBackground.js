@@ -1,10 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
-
 import styles from "./HomepageBackground.module.css";
 
-import Background3DModel from "../Background3DModel";
 import useViewportSize from "@/hooks/useViewportSize";
+
+import Background3DModel from "../Background3DModel";
 
 function HomepageBackground() {
   const largeScreen = useViewportSize().width > 1090;

@@ -1,12 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { m, LazyMotion, useAnimation } from "framer-motion";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
-import { motion, useAnimation } from "framer-motion";
-
-import { smoothSpring } from "@/constants";
-import GradientBorders from "../GradientBorders";
 
 import styles from "./NameGeneratorDemo.module.css";
+
+import GradientBorders from "../GradientBorders";
+
+import { smoothSpring } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function NameGeneratorDemo() {
   const [name, setName] = useState("");
@@ -42,9 +45,11 @@ function NameGeneratorDemo() {
     <div className={styles.wrapper}>
       <GradientBorders topBorder={"0"} bottomBorder={"0"}>
         <div className={styles.nameWrapper}>
-          <motion.p className={styles.name} animate={controls} transition={smoothSpring}>
-            {name}
-          </motion.p>
+          <LazyMotion features={loadFeatures}>
+            <m.p className={styles.name} animate={controls} transition={smoothSpring}>
+              {name}
+            </m.p>
+          </LazyMotion>
         </div>
       </GradientBorders>
       <button onClick={generateName} className={styles.pushable}>

@@ -1,12 +1,15 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { m, LazyMotion, useInView, domAnimation } from "framer-motion";
+import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "./EmbedVideo.module.css";
 
 import Spinner from "../Spinner";
 import VideoComponent from "../VideoComponent";
+
 import { smoothSpring } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,7 +31,7 @@ function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
         </div>
       )}
       {isInView && (
-        <LazyMotion features={domAnimation}>
+        <LazyMotion features={loadFeatures}>
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView && isLoaded ? [0, 1] : 0, y: isInView ? 0 : 20 }}

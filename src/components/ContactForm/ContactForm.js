@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, m, LazyMotion, domAnimation, useInView } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, useInView } from "framer-motion";
 import { ArrowUp, X } from "react-feather";
 
 import styles from "./ContactForm.module.css";
@@ -8,6 +8,8 @@ import styles from "./ContactForm.module.css";
 import { scrollToRef } from "@/helpers";
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 const formSpring = { type: "spring", damping: 60, stiffness: 700, restDelta: 0.01 };
 
@@ -94,7 +96,7 @@ function ContactForm() {
 
   const openFormButton = () => {
     return (
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={loadFeatures}>
         <m.button
           className={styles.openFormButton}
           type='button'
@@ -150,7 +152,7 @@ function ContactForm() {
 
   return (
     <section ref={contactRef} className={styles.wrapper} transition={formSpring}>
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={loadFeatures}>
         <AnimatePresence>
           {formShown && (
             <m.form

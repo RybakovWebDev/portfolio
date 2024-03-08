@@ -2,7 +2,7 @@
 import React, { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, AnimatePresence } from "framer-motion";
 
 import styles from "./Header.module.css";
 
@@ -13,6 +13,8 @@ import DarkmodeToggle from "../DarkmodeToggle";
 
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 const animationFinished = { opacity: 1, scale: 1 };
 
@@ -84,7 +86,7 @@ function Header({ initialTheme }) {
                 >
                   {l.title}
                 </Link>
-                <LazyMotion features={domAnimation}>
+                <LazyMotion features={loadFeatures}>
                   <AnimatePresence>
                     {hoveredNavItem === l.title ? (
                       <m.div

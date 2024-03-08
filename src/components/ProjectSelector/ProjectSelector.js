@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence, m, useInView, LazyMotion, domAnimation } from "framer-motion";
+import { AnimatePresence, m, useInView, LazyMotion } from "framer-motion";
 import { ExternalLink, GitHub } from "react-feather";
 
 import styles from "./ProjectSelector.module.css";
@@ -11,9 +11,12 @@ import ExternalLinkIcon from "../ExternalLinkIcon";
 import GradientBorders from "../GradientBorders";
 import ArrowButton from "../ArrowButton";
 
-import { PROJECTS } from "@/constants";
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
+
+import { PROJECTS } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function Projects({ ...props }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,7 +41,7 @@ function Projects({ ...props }) {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.section
         ref={projectSelectorRef}
         className={styles.wrapper}
@@ -57,7 +60,10 @@ function Projects({ ...props }) {
             exit={{ opacity: 0, x: animationDirection }}
             transition={{ type: "spring", damping: 50, stiffness: 700 }}
           >
-            <Link href={`/${selectedProject.slug}`} aria-label='Open detailed project information'>
+            <Link
+              href={`/${selectedProject.slug}`}
+              aria-label={`Open detailed project information for ${selectedProject.title}`}
+            >
               <div className={styles.imageWrapper}>
                 <GradientBorders topBorder={50} rightBorder={50} bottomBorder={50} leftBorder={50}>
                   <Image
@@ -78,7 +84,7 @@ function Projects({ ...props }) {
               <p className={styles.stack}>Stack: {selectedProject.stack}</p>
               <Link
                 href={`/${selectedProject.slug}`}
-                aria-label='Open detailed project information'
+                aria-label={`Open detailed project information for ${selectedProject.title}`}
                 className={styles.detailsBtn}
               >
                 <m.span

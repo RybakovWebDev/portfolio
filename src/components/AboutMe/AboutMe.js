@@ -1,5 +1,5 @@
 "use client";
-import { m, LazyMotion, domAnimation, useInView, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, useInView, AnimatePresence } from "framer-motion";
 
 import styles from "./AboutMe.module.css";
 
@@ -7,6 +7,8 @@ import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
 
 import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function AboutMe() {
   const { headerRef, aboutRef } = useRefsContext();
@@ -16,7 +18,7 @@ function AboutMe() {
   const showAbout = !headerIsInView || viewportSize.width > 1430;
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <section ref={aboutRef} className={styles.wrapper}>
         <AnimatePresence mode='popLayout'>
           {showAbout && (

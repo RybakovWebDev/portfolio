@@ -43,7 +43,7 @@
   }
 
   .hero h2 {
-    font-size: clamp(1rem, 6vw, 3rem);
+    font-size: clamp(0.5rem, 6vw, 3rem);
   }
 
   .introductionEnd {

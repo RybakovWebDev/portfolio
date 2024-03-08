@@ -1,4 +1,4 @@
-import { LazyMotion, domMax, m } from "framer-motion";
+import { LazyMotion, m } from "framer-motion";
 
 import { ChevronLeft, ChevronRight } from "react-feather";
 
@@ -6,9 +6,11 @@ import styles from "./ArrowButton.module.css";
 
 import { shevronAnimation, smoothSpring } from "@/constants";
 
+const loadFeatures = () => import("../../features").then((res) => res.default);
+
 function ArrowButton({ direction, action, isVisible }) {
   return isVisible ? (
-    <LazyMotion features={domMax}>
+    <LazyMotion features={loadFeatures}>
       <m.button
         aria-label={`${direction} project`}
         className={styles.switchProjectButton}

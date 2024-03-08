@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import { m, LazyMotion, domAnimation, useInView } from "framer-motion";
+import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "../projects.module.css";
 import MDSStyles from "./MDS.module.css";
@@ -10,13 +11,17 @@ import MDSStyles from "./MDS.module.css";
 import SectionNameLine from "@/components/SectionNameLine";
 import EmbedVideo from "@/components/EmbedVideo";
 import GradientBorders from "@/components/GradientBorders";
-import BackToTop from "@/components/BackToTop";
-import NameGeneratorDemo from "@/components/NameGeneratorDemo";
-import AwsIconAnimation from "@/components/AwsIconAnimation";
+
+const BackToTop = dynamic(() => import("@/components/BackToTop"));
+const NameGeneratorDemo = dynamic(() => import("@/components/NameGeneratorDemo"));
+const AwsIconAnimation = dynamic(() => import("@/components/AwsIconAnimation"));
 
 import useViewportSize from "@/hooks/useViewportSize";
+
 import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
+
+const loadFeatures = () => import("../../../features").then((res) => res.default);
 
 function MDS() {
   const [theme, setTheme] = useState();
@@ -55,7 +60,7 @@ function MDS() {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.div initial={{ opacity: 0 }} animate={{ opacity: viewportSize.width ? 1 : 0 }} className={styles.page}>
         <h1 className={styles.title}>MDS</h1>
         <p className={styles.description}>Full-stack website for looking up information related to films.</p>
@@ -338,7 +343,7 @@ function MDS() {
                 of my personal highlights among the stuff I had to figure out:
               </p>
 
-              <LazyMotion features={domAnimation}>
+              <LazyMotion features={loadFeatures}>
                 <m.ul variants={container} initial='hidden' animate='show'>
                   <m.li variants={item}>
                     <strong>MUI:</strong> used this UI framework to design and implement a responsive and user-friendly

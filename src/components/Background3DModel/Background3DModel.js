@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { MeshBasicMaterial } from "three";
 import { EffectComposer, Glitch } from "@react-three/postprocessing";
@@ -10,8 +10,9 @@ import styles from "./Background3DModel.module.css";
 
 import { createXShape } from "@/helpers";
 
-const material = new MeshBasicMaterial({ color: "rgb(235, 235, 235)" });
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
+const material = new MeshBasicMaterial({ color: "rgb(235, 235, 235)" });
 const xGeometry = createXShape(material);
 
 const shapes = {
@@ -91,7 +92,7 @@ const Model = ({ shape, setIsModelReady }) => {
 function Background3DModel({ shape }) {
   const [isModelReady, setIsModelReady] = useState(false);
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.div
         className={styles.wrapper}
         initial={{ opacity: 0 }}

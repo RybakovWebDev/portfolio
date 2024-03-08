@@ -3,11 +3,13 @@ import React, { useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { MeshBasicMaterial, TextureLoader } from "three";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 
 import styles from "./AwsIconAnimation.module.css";
 
 import { AWSICONS } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function Cube({ onLoad }) {
   const [isRotating, setIsRotating] = useState(false);
@@ -79,7 +81,7 @@ function AwsIconAnimation() {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.div
         className={styles.wrapper}
         initial={{ opacity: 0 }}

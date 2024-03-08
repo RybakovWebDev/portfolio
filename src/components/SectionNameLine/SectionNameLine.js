@@ -1,9 +1,13 @@
-import { LazyMotion, domAnimation, m } from "framer-motion";
+"use client";
+import { LazyMotion, m } from "framer-motion";
+
 import { smoothSpring } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function SectionNameLine({ fromRight }) {
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.div
         animate={{
           width: "100%",

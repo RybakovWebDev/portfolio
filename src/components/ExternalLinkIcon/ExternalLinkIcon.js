@@ -1,12 +1,14 @@
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 
 import styles from "./ExternalLinkIcon.module.css";
 
 import { smoothSpring } from "@/constants";
 
+const loadFeatures = () => import("../../features").then((res) => res.default);
+
 function ExternalLinkIcon({ link, children, ...props }) {
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.a
         className={styles.link}
         target='_blank'

@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, LazyMotion, domAnimation, m, useInView } from "framer-motion";
+import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
 
 import { ChevronUp } from "react-feather";
 
@@ -7,6 +7,8 @@ import styles from "./BackToTop.module.css";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import { shevronAnimation, smoothSpring } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function BackToTop() {
   const { headerRef } = useRefsContext();
@@ -17,7 +19,7 @@ function BackToTop() {
   const showButton = !useInView(headerRef);
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <AnimatePresence>
         {showButton && (
           <m.button
