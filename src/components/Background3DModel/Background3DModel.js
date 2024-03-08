@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { m, LazyMotion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { MeshBasicMaterial } from "three";

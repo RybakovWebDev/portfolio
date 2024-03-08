@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, m, LazyMotion, useInView } from "framer-motion";
 import { ArrowUp, X } from "react-feather";
 

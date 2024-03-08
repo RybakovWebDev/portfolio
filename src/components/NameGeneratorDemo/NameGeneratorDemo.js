@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { m, LazyMotion, useAnimation } from "framer-motion";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 

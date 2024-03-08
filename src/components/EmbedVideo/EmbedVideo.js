@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "./EmbedVideo.module.css";
