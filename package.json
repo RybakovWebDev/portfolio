@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@popmotion/popcorn": "^0.4.4",
     "@react-three/drei": "^9.93.0",
     "@react-three/fiber": "^8.15.13",
     "@react-three/postprocessing": "^2.15.12",

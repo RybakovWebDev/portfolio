@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { m, LazyMotion, useAnimation } from "framer-motion";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 
@@ -15,7 +15,7 @@ function NameGeneratorDemo() {
   const [name, setName] = useState("");
   const controls = useAnimation();
 
-  const generateName = async () => {
+  const generateName = useCallback(async () => {
     await controls.start({
       x: ["0rem", "25rem"],
       opacity: [1, 0],
@@ -35,11 +35,11 @@ function NameGeneratorDemo() {
       opacity: [0, 1],
       transition: { duration: 0.3 },
     });
-  };
+  }, [controls]);
 
   useEffect(() => {
     generateName();
-  }, []);
+  }, [generateName]);
 
   return (
     <div className={styles.wrapper}>
