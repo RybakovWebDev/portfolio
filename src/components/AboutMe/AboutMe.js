@@ -31,7 +31,7 @@ function AboutMe() {
               <p className={styles.text}>
                 I am a former video editor turned web developer. Embarking on this journey in late 2020, I focused on
                 React to learn building dynamic user-friendly interfaces. Since then I have taken multiple courses on
-                different technologies like HTML, CSS, JS, Node.js, MongoDB and Next.js, as well as utilized various AWS
+                different technologies like HTML, CSS, JS, Node.js, MongoDB and Next.js, and also utilized various AWS
                 products for deployment and hosting.
               </p>
               <p className={styles.text}>
@@ -39,7 +39,8 @@ function AboutMe() {
                 I implement best practices and keep my code clean and maintainable.
               </p>
               <p className={styles.text}>
-                Below you&apos;ll find some of my projects to see how I turn ideas into interactive experiences!
+                Below you&apos;ll find some of my projects which can show you how I turn ideas into interactive
+                experiences 😊
                 <span className={styles.caret}>|</span>
               </p>
             </m.div>
