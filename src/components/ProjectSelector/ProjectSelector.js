@@ -23,7 +23,7 @@ function Projects({ ...props }) {
   const [animationDirection, setAnimationDirection] = useState(0);
   const viewportSize = useViewportSize();
 
-  const isSmallScreen = viewportSize.width < 1430;
+  const isSmallScreen = viewportSize.width < 1100;
 
   const { projectSelectorRef, projectNameRef } = useRefsContext();
 

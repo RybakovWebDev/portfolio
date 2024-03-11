@@ -144,3 +144,12 @@
     width: 100%;
   }
 }
+
+@media (max-width: 1100px) {
+  .openFormButton {
+    padding: 5px;
+    height: auto;
+    border: 1px solid rgb(var(--color-underline), 0.3);
+    border-radius: 5px;
+  }
+}

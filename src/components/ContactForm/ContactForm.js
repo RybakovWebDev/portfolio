@@ -40,7 +40,7 @@ function ContactForm() {
 
   const { contactRef, footerRef } = useRefsContext();
 
-  const smallScreen = useViewportSize().width < 600;
+  const smallScreen = useViewportSize().width < 1100;
 
   const formRef = useRef();
   const nameInputRef = useRef();
@@ -110,7 +110,7 @@ function ContactForm() {
           animate={{ opacity: formShown ? 0 : 0.8, y: 0 }}
         >
           <AnimatePresence>
-            {!formShown && (
+            {!formShown && !smallScreen && (
               <m.div
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 0.8, y: 0, transition: { delay: 0.1 } }}
@@ -136,7 +136,7 @@ function ContactForm() {
           </AnimatePresence>
           Open Contact Form
           <AnimatePresence>
-            {hovered && (
+            {hovered && !smallScreen && (
               <m.div
                 className={styles.underline}
                 initial={{ width: 0 }}
