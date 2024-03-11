@@ -68,7 +68,7 @@ function MDS() {
           <EmbedVideo
             src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Homepage_MP4_H264.mp4`}
             srcVP9={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Homepage_WEBM_VP9.webm`}
-            height={calculateVideoHeight(viewportSize.width, 650)}
+            height={calculateVideoHeight(viewportSize.width, 650, 135)}
             showSpinner={true}
           />
         </GradientBorders>
@@ -185,9 +185,8 @@ function MDS() {
             <div className={styles.sideBySideLeftWrapper}>
               <div className={styles.iconWrapper}>
                 <Image
-                  key={theme}
                   className={styles.fadeIn}
-                  src={`/images/icons/MongoDB_${theme === "light" ? "SlateBlue" : "White"}.webp`}
+                  src={`/images/icons/MongoDB_Spring-Green.svg`}
                   alt='MongoDB logo'
                   fill
                   sizes='200px'
