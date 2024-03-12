@@ -232,7 +232,7 @@ function MDS() {
                 <GradientBorders rightBorder={"30px"} leftBorder={"30px"}>
                   <EmbedVideo
                     src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Movie_info_scroll_MP4_H264.mp4`}
-                    height={calculateVideoHeight(viewportSize.width, 550, 230)}
+                    height={calculateVideoHeight(viewportSize.width, 550, 250)}
                     showSpinner={true}
                   />
                 </GradientBorders>
