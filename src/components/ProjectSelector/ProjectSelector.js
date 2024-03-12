@@ -92,7 +92,7 @@ function Projects({ ...props }) {
                   whileHover={{ borderBottom: "6px solid rgba(var(--color-underline), 0.8)" }}
                   transition={{ duration: 0.1 }}
                 >
-                  More information
+                  View project details
                 </m.span>
               </Link>
             </div>
