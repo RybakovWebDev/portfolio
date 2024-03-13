@@ -14,7 +14,7 @@ import DarkmodeToggle from "../DarkmodeToggle";
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
 
-const loadFeatures = () => import("../../features").then((res) => res.default);
+const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 const animationFinished = { opacity: 1, scale: 1 };
 
