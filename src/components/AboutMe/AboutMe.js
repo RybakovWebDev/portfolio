@@ -29,17 +29,17 @@ function AboutMe() {
               transition={{ duration: 0.3 }}
             >
               <p className={styles.text}>
-                I am a former video editor turned web developer. Embarking on this journey in late 2020, I focused on
-                React to learn building dynamic user-friendly interfaces. Since then I have taken multiple courses on
-                different technologies like HTML, CSS, JS, Node.js, MongoDB and Next.js, and also utilized various AWS
-                products for deployment and hosting.
+                I am a former video editor turned web developer. Since embarking on this journey in 2020, I have
+                completed multiple courses on things like JavaScript, React, Next.js and the MERN stack, as well as
+                finished multiple personal projects of my own.
               </p>
               <p className={styles.text}>
-                Technology holds a special place in my heart, and my passion for it fuels my constant learning, ensuring
-                I implement best practices and keep my code clean and maintainable.
+                Technology holds a special place in my heart, and my passion for it fuels my constant learning. I&apos;m
+                very meticulous about my work process, constantly researching and implementing best practices to keep my
+                code clean and maintainable.
               </p>
               <p className={styles.text}>
-                Below you&apos;ll find some of my projects which can show you how I turn ideas into interactive
+                Below you&apos;ll find some of my projects which can demonstrate how I turn ideas into interactive
                 experiences 😊
                 <span className={styles.caret}>|</span>
               </p>
