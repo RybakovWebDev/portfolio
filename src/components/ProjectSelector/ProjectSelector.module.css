@@ -1,5 +1,4 @@
 .wrapper {
-  margin: 10vh 0 0 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -118,6 +117,12 @@
 @media (max-width: 450px) {
   .imageWrapper {
     max-height: 20rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .detailsBtn {
+    font-size: 23px;
   }
 }
 

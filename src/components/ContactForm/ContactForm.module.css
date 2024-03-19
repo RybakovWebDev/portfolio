@@ -1,29 +1,62 @@
 .wrapper {
-  margin: 5rem 0 0.5rem 0;
+  margin: 5rem 0 0 0;
   width: 100%;
-  height: 20rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
 }
 
+.intro {
+  font-size: 20px;
+  text-align: center;
+}
+
+.resumeWrapper {
+  margin: 1rem;
+  display: flex;
+}
+
+.formWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 400;
+}
+
 .form {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 24rem;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
   background-color: rgb(235, 235, 235);
   box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
+  border-radius: 5px;
+  z-index: 500;
 }
 
 .closeButton {
-  height: 2rem;
-  width: 2rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
+  height: 2rem;
+  width: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,8 +101,9 @@
 }
 
 .openFormButton {
-  position: absolute;
-  height: 4rem;
+  bottom: 0;
+  margin: 0 0 1rem 0;
+  height: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -132,8 +166,15 @@
 
 @media (max-width: 1430px) {
   .form {
+    position: fixed;
+    top: auto;
+    left: auto;
+    bottom: 0;
     width: 100%;
-    max-width: 38rem;
+    height: 80vh;
+    max-height: 30rem;
+    transform: none;
+    border-radius: 0;
   }
 
   .topInputWrapper {
@@ -143,12 +184,17 @@
   .form textarea {
     width: 100%;
   }
+
+  .sendWrapper {
+    margin: 0 0 1rem 0;
+  }
 }
 
 @media (max-width: 1100px) {
   .openFormButton {
     padding: 5px;
     height: auto;
+    width: auto;
     border: 1px solid rgb(var(--color-underline), 0.3);
     border-radius: 5px;
   }

@@ -1,0 +1,48 @@
+import { m, LazyMotion, useAnimation } from "framer-motion";
+import Image from "next/image";
+
+import styles from "./FileLink.module.css";
+
+import { smoothSpring } from "@/constants";
+
+const loadFeatures = () => import("../../features").then((res) => res.default);
+
+function FileLink({ src, link, alt, children, ...props }) {
+  const controls = useAnimation();
+
+  const handleMouseEnter = () => {
+    controls.start({
+      y: -10,
+      opacity: 1,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    controls.start({
+      y: 0,
+      opacity: 0.5,
+    });
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <a
+        className={styles.link}
+        target='_blank'
+        rel='noopener noreferrer'
+        href={link}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <LazyMotion features={loadFeatures}>
+          <m.div animate={controls} initial={{ opacity: 0.5, y: 0 }} transition={smoothSpring} {...props}>
+            <Image className={styles.image} src={src} alt={alt} fill sizes='100px' />
+          </m.div>
+        </LazyMotion>
+        <p>{children}</p>
+      </a>
+    </div>
+  );
+}
+
+export default FileLink;

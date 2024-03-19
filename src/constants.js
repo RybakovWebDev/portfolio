@@ -1,4 +1,4 @@
-import { GitHub, Linkedin, Mail } from "react-feather";
+import { FileText, GitHub, Linkedin, Mail } from "react-feather";
 
 import AmplifyIcon from "../public/images/aws-icons/Amplify.webp";
 import CloudFrontIcon from "../public/images/aws-icons/CloudFront.webp";
@@ -46,6 +46,19 @@ export const NAVLINKS = [
     title: "Contact",
     slug: "contact",
     href: "/",
+  },
+];
+
+export const RESUME = [
+  {
+    title: ".PDF",
+    link: "https://drive.google.com/file/d/1kvPcqLvPb926A-5y28GLHS5SVHG4fcrg/view?usp=sharing",
+    icon: "/images/icons/PDF_file_icon.svg",
+  },
+  {
+    title: ".DOCX",
+    link: "https://docs.google.com/document/d/1boKpbfEKiVViD5akRa1LwEBGusrTKlF2/export?format=docx",
+    icon: "/images/icons/docx_icon.svg",
   },
 ];
 
@@ -147,6 +160,13 @@ export const duration300 = {
 
 export const duration500 = {
   duration: 0.5,
+};
+
+export const opacity1 = {
+  opacity: 1,
+};
+export const opacity0 = {
+  opacity: 0,
 };
 
 export const LIGHT_COLORS = {
