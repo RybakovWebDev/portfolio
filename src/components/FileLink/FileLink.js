@@ -25,23 +25,22 @@ function FileLink({ src, link, alt, children, ...props }) {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <a
-        className={styles.link}
-        target='_blank'
-        rel='noopener noreferrer'
-        href={link}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <LazyMotion features={loadFeatures}>
-          <m.div animate={controls} initial={{ opacity: 0.5, y: 0 }} transition={smoothSpring} {...props}>
-            <Image className={styles.image} src={src} alt={alt} fill sizes='100px' />
-          </m.div>
-        </LazyMotion>
-        <p>{children}</p>
-      </a>
-    </div>
+    <a
+      className={styles.link}
+      target='_blank'
+      rel='noopener noreferrer'
+      href={link}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
+    >
+      <LazyMotion features={loadFeatures}>
+        <m.div animate={controls} initial={{ opacity: 0.5, y: 0 }} transition={smoothSpring}>
+          <Image className={styles.image} src={src} alt={alt} fill sizes='100px' />
+        </m.div>
+      </LazyMotion>
+      <p>{children}</p>
+    </a>
   );
 }
 

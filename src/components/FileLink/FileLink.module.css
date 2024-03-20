@@ -1,8 +1,5 @@
-.wrapper {
+.link {
   width: 5rem;
-}
-
-.wrapper a {
   display: flex;
   flex-direction: column;
   align-items: center;

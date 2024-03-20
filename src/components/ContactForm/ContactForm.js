@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, m, LazyMotion, useInView } from "framer-motion";
-import { ArrowUp, FileText, X } from "react-feather";
+import { AnimatePresence, m, LazyMotion } from "framer-motion";
+import { X } from "react-feather";
 
 import styles from "./ContactForm.module.css";
 
@@ -101,7 +101,7 @@ function ContactForm() {
             handleOpenForm();
           }}
           initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: formShown ? 0 : 0.8, y: 0 }}
+          animate={{ opacity: hovered ? 1 : 0.8, y: 0 }}
         >
           Open Contact Form
           <AnimatePresence>
