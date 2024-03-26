@@ -121,9 +121,8 @@ function ContactForm() {
 
   return (
     <section ref={contactRef} className={styles.wrapper} transition={formSpring}>
-      <p className={styles.intro}>
-        Let&apos;s build something together! <br /> View my resume in:
-      </p>
+      <h3 className={styles.build}>Let&apos;s build something together!</h3>
+      <p className={styles.viewResume}>View my resume in:</p>
       <div className={styles.resumeWrapper}>
         {RESUME.map((r) => (
           <FileLink

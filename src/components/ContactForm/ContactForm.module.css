@@ -6,9 +6,14 @@
   align-items: center;
 }
 
-.intro {
-  font-size: 20px;
+.build {
+  font-size: 30px;
+  font-weight: 600;
   text-align: center;
+}
+
+.viewResume {
+  font-size: 20px;
 }
 
 .resumeWrapper {
@@ -165,6 +170,11 @@
 }
 
 @media (max-width: 1430px) {
+  .build {
+    width: 90%;
+    font-size: clamp(20px, 8vw, 35px);
+  }
+
   .form {
     position: fixed;
     top: auto;
