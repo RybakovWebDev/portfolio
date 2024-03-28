@@ -50,7 +50,7 @@ function Todolist() {
             <p className={styles.sectionTextIntro}>
               My very first project done without the help of any tutorials. A very simple to-do list app that allows the
               user to add tasks, mark them as completed, and remove them. Supports multiple lists of tasks, as well as
-              importing a list of tasks in multiple formats.
+              importing a list of tasks in multiple formats. Uses local storage and works as a installable PWA.
             </p>
           </div>
         </div>
