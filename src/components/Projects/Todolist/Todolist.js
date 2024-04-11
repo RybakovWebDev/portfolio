@@ -177,7 +177,7 @@ function Todolist() {
           <div className={styles.sectionTextCenterWrapper}>
             <div className={todostyles.lessonTextWrapper}>
               <p ref={lessonRef}>
-                Despite overgrowing this project a long time ago, I&apos;m very glad for doing it and allowing me to see
+                Despite outgrowing this project a long time ago, I&apos;m very glad for doing it and allowing me to see
                 what it&apos;s like to work on my own with zero guidance. I made a large amount of mistakes, but they
                 taught me a lot about how Javascript and React work, as well as how important it is to flesh out
                 business logic before starting the actual development process.

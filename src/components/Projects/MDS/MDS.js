@@ -106,7 +106,7 @@ function MDS() {
                   information about movies, but the project quickly grew in scale. Eventually I also decided to
                   implement user accounts where they could edit their names and upload custom profile pictures as well
                   as create, edit and share movie watchlists, with drag and drop support for lists, with everything
-                  smoothly animated. As I was working on this, ChatGPT began to really blow up, so I also wanted to to
+                  smoothly animated. As I was working on this, ChatGPT began to really blow up, so I also wanted to
                   practice working with AI chatbots by using including it. Last but not least, it was important for me
                   to make the website responsive and functional on devices with different screen sizes.
                 </p>
@@ -197,7 +197,7 @@ function MDS() {
               <div className={styles.sectionTextRightWrapper}>
                 <p>
                   For the database, I went with a MongoDB deployment to AWS EC2 to get some experience with manually
-                  deploying a db and interacting with it instead of using a service like Mongo Atlas or Firebase.
+                  deploying a database and interacting with it instead of using a service like Mongo Atlas or Firebase.
                   Mongoose was used for cutting down on boilerplate and general streamlining of the development process.
                 </p>
               </div>
@@ -269,8 +269,8 @@ function MDS() {
                   Implementing custom profile pictures also meant using file validation logic, which I added on both
                   frontend and backend for better safety and lower chance of errors. A quite unexpected challenge I ran
                   into here was the iOS support. Apple uses HEIC as the default image format, and due to its rather low
-                  adoption rate everywhere else I had to detect such images on the frontend, convert them to jpeg, and
-                  only then send them to backend for further processing.
+                  adoption rate I had to detect such images on the client side, convert them to jpeg, and only then send
+                  them to backend for further processing.
                 </p>
               </div>
             </div>
