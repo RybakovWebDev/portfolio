@@ -1,26 +1,3 @@
-.wrapper {
-  margin: 5rem 0 0 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.build {
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.viewResume {
-  font-size: 20px;
-}
-
-.resumeWrapper {
-  margin: 1rem;
-  display: flex;
-}
-
 .formWrapper {
   width: 100%;
   height: 100%;

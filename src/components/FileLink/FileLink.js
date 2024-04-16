@@ -1,3 +1,4 @@
+"use client";
 import { m, LazyMotion, useAnimation } from "framer-motion";
 import Image from "next/image";
 
@@ -20,7 +21,7 @@ function FileLink({ src, link, alt, children, ...props }) {
   const handleMouseLeave = () => {
     controls.start({
       y: 0,
-      opacity: 0.5,
+      opacity: 0.8,
     });
   };
 

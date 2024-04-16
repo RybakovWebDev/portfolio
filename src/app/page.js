@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
+import CallToAction from "@/components/CallToAction";
 
 const ProjectSelector = dynamic(() => import("@/components/ProjectSelector"));
 const ContactForm = dynamic(() => import("@/components/ContactForm"));
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <AboutMe />
       <ProjectSelector />
+      <CallToAction />
       <ContactForm />
       <Footer />
       <HomepageBackground />

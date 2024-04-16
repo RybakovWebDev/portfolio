@@ -9,13 +9,9 @@ import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
 import { scrollToRef } from "@/helpers";
 
-import FileLink from "../FileLink";
-
-import { RESUME, opacity0, opacity1 } from "@/constants";
+import { opacity0, opacity1 } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
-
-const formSpring = { type: "spring", damping: 60, stiffness: 700, restDelta: 0.01 };
 
 const formInitial = { padding: "1rem", opacity: 0 };
 
@@ -120,23 +116,7 @@ function ContactForm() {
   };
 
   return (
-    <section ref={contactRef} className={styles.wrapper} transition={formSpring}>
-      <h3 className={styles.build}>Let&apos;s build something together!</h3>
-      <p className={styles.viewResume}>View my resume in:</p>
-      <div className={styles.resumeWrapper}>
-        {RESUME.map((r) => (
-          <FileLink
-            key={r.title}
-            src={r.icon}
-            aria-label={`View my resume in ${r.title}`}
-            alt={`${r.title} file format logo`}
-            link={r.link}
-          >
-            {r.title}
-          </FileLink>
-        ))}
-      </div>
-
+    <section ref={contactRef}>
       <LazyMotion features={loadFeatures}>
         <AnimatePresence>
           {formShown && (
