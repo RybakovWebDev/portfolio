@@ -52,12 +52,12 @@ export const NAVLINKS = [
 export const RESUME = [
   {
     title: ".PDF",
-    link: "https://drive.google.com/file/d/1kvPcqLvPb926A-5y28GLHS5SVHG4fcrg/view?usp=sharing",
+    link: "https://docs.google.com/document/d/1QsEgbn54SGjTYwA3Z6I24Ea3BXf89S-9UUsQdLMgyZ0/export?format=pdf",
     icon: "/images/icons/PDF_file_icon.svg",
   },
   {
     title: ".DOCX",
-    link: "https://docs.google.com/document/d/1boKpbfEKiVViD5akRa1LwEBGusrTKlF2/export?format=docx",
+    link: "https://docs.google.com/document/d/1QsEgbn54SGjTYwA3Z6I24Ea3BXf89S-9UUsQdLMgyZ0/export?format=docx",
     icon: "/images/icons/docx_icon.svg",
   },
 ];

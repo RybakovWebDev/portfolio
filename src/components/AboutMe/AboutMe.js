@@ -30,13 +30,13 @@ function AboutMe() {
             >
               <p className={styles.text}>
                 I am a former video editor turned web developer. Since embarking on this journey in 2020, I have
-                completed multiple courses on things like JavaScript, React, Next.js and the MERN stack, as well as
-                finished multiple personal projects of my own.
+                completed multiple courses on technologies like JavaScript, TypeScript, React, Next.js and the MERN
+                stack, as well as finished multiple commercial and personal projects.
               </p>
               <p className={styles.text}>
-                Technology holds a special place in my heart, and my passion for it fuels my constant learning. I&apos;m
-                very meticulous about my work process, constantly researching and implementing best practices to keep my
-                code clean and maintainable.
+                Technology holds a special place in my heart, and my passion for it fuels my constant self-improvement.
+                I&apos;m very meticulous about my work process, constantly researching and implementing best practices
+                to keep my code clean and maintainable.
               </p>
               <p className={styles.text}>
                 Below you&apos;ll find some of my projects which can demonstrate how I turn ideas into interactive
