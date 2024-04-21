@@ -1,0 +1,17 @@
+.sectionTextGoal {
+  margin: 0 0 2rem 0;
+}
+
+.lessonTextWrapper {
+  width: 60%;
+}
+
+.lessonTextWrapper p {
+  margin: 0 0 2rem 0;
+}
+
+@media (max-width: 1430px) {
+  .lessonTextWrapper {
+    width: 100%;
+  }
+}

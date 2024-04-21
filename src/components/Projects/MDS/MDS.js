@@ -11,6 +11,7 @@ import MDSStyles from "./MDS.module.css";
 import SectionNameLine from "@/components/SectionNameLine";
 import EmbedVideo from "@/components/EmbedVideo";
 import GradientBorders from "@/components/GradientBorders";
+import ProjectLinks from "@/components/ProjectLinks";
 
 const BackToTop = dynamic(() => import("@/components/BackToTop"));
 const NameGeneratorDemo = dynamic(() => import("@/components/NameGeneratorDemo"));
@@ -18,10 +19,12 @@ const AwsIconAnimation = dynamic(() => import("@/components/AwsIconAnimation"));
 
 import useViewportSize from "@/hooks/useViewportSize";
 
-import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
+import { PROJECTS, finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
 
 const loadFeatures = () => import("../../../features").then((res) => res.default);
+
+const project = PROJECTS[1];
 
 function MDS() {
   const [theme, setTheme] = useState();
@@ -62,8 +65,8 @@ function MDS() {
   return (
     <LazyMotion features={loadFeatures}>
       <m.div initial={{ opacity: 0 }} animate={{ opacity: viewportSize.width ? 1 : 0 }} className={styles.page}>
-        <h1 className={styles.title}>MDS</h1>
-        <p className={styles.description}>Full-stack website for looking up information related to films.</p>
+        <h1 className={styles.title}>{project.title}</h1>
+        <p className={styles.description}>{project.description}</p>
         <GradientBorders>
           <EmbedVideo
             src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Homepage_MP4_H264.mp4`}
@@ -72,6 +75,8 @@ function MDS() {
             showSpinner={true}
           />
         </GradientBorders>
+
+        <ProjectLinks live={project.live} github={project.github} />
 
         <div className={styles.sectionTextCenterWrapper}>
           <p className={styles.sectionTextIntro}>

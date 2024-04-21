@@ -65,7 +65,7 @@ function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.1 }}
                     >
-                      <Pause size={72} strokeWidth={1} color='white' />
+                      <Pause size={52} strokeWidth={1} color='white' />
                     </m.div>
                   )
                 ) : (
@@ -76,7 +76,7 @@ function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.1 }}
                   >
-                    <Image src={`/images/icons/play.svg`} alt='Start playback' width={72} height={72} />
+                    <Image src={`/images/icons/play.svg`} alt='Start playback' width={52} height={52} />
                   </m.div>
                 )}
               </AnimatePresence>

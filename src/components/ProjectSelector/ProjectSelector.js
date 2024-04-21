@@ -15,29 +15,47 @@ import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
 
 import { PROJECTS } from "@/constants";
+import ProjectLinks from "../ProjectLinks";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function Projects({ ...props }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [animationDirection, setAnimationDirection] = useState(0);
+  const [animationDirection, setAnimationDirection] = useState(null);
   const viewportSize = useViewportSize();
 
   const isSmallScreen = viewportSize.width < 1100;
 
   const { projectSelectorRef, projectNameRef } = useRefsContext();
 
-  const isInView = useInView(projectSelectorRef, { once: true });
+  const isInView = useInView(projectSelectorRef, { once: true, amount: 0.4 });
   const selectedProject = PROJECTS[currentIndex];
 
   const prevProject = () => {
+    setAnimationDirection(-1);
     setCurrentIndex((oldIndex) => (oldIndex > 0 ? oldIndex - 1 : PROJECTS.length - 1));
-    setAnimationDirection(-50);
   };
 
   const nextProject = () => {
+    setAnimationDirection(1);
     setCurrentIndex((oldIndex) => (oldIndex + 1) % PROJECTS.length);
-    setAnimationDirection(50);
+  };
+
+  const variants = {
+    enter: {
+      x: animationDirection ? (animationDirection > 0 ? 50 : -50) : 0,
+      opacity: 0,
+    },
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (animationDirection) => {
+      return {
+        x: animationDirection < 0 ? 50 : -50,
+        opacity: 0,
+      };
+    },
   };
 
   return (
@@ -51,13 +69,14 @@ function Projects({ ...props }) {
         {...props}
       >
         <ArrowButton direction='previous' action={prevProject} isVisible={currentIndex > 0} />
-        <AnimatePresence mode={isSmallScreen ? "popLayout" : "wait"}>
+        <AnimatePresence mode={isSmallScreen ? "popLayout" : "wait"} custom={animationDirection}>
           <m.div
             key={selectedProject.slug}
             className={styles.project}
-            initial={{ opacity: 0, x: animationDirection }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: animationDirection }}
+            variants={variants}
+            initial='enter'
+            animate='center'
+            exit='exit'
             transition={{ type: "spring", damping: 50, stiffness: 700 }}
           >
             <Link
@@ -97,15 +116,7 @@ function Projects({ ...props }) {
               </Link>
             </div>
 
-            <div className={styles.linksWrapper}>
-              <ExternalLinkIcon aria-label='Open project on GitHub' link={selectedProject.github}>
-                <GitHub size={40} strokeWidth={1} />
-              </ExternalLinkIcon>
-
-              <ExternalLinkIcon aria-label='Open deployed project' link={selectedProject.live}>
-                <ExternalLink size={40} strokeWidth={1} />
-              </ExternalLinkIcon>
-            </div>
+            <ProjectLinks live={selectedProject.live} github={selectedProject.github} />
           </m.div>
         </AnimatePresence>
         <ArrowButton direction='next' action={nextProject} isVisible={currentIndex < PROJECTS.length - 1} />

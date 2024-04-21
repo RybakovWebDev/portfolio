@@ -69,14 +69,6 @@
   cursor: pointer;
 }
 
-.linksWrapper {
-  margin: 1rem 0 0 0;
-  width: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 @media (max-width: 1430px) {
   .wrapper {
     margin: 0;

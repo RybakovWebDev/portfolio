@@ -12,7 +12,7 @@ function Hero() {
       <h1 ref={heroRef} className={styles.name}>
         Andrey
       </h1>
-      <h2 className={styles.introductionEnd}>{"an aspiring web <developer />."}</h2>
+      <h2 className={styles.introductionEnd}>{"a web <developer />"}</h2>
     </section>
   );
 }

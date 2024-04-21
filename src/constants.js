@@ -1,4 +1,4 @@
-import { FileText, GitHub, Linkedin, Mail } from "react-feather";
+import { GitHub, Linkedin, Mail } from "react-feather";
 
 import AmplifyIcon from "../public/images/aws-icons/Amplify.webp";
 import CloudFrontIcon from "../public/images/aws-icons/CloudFront.webp";
@@ -9,12 +9,21 @@ import S3Icon from "../public/images/aws-icons/Simple Storage Service.webp";
 
 export const PROJECTS = [
   {
+    title: "Handsome bar",
+    slug: "Handsome",
+    description: "Static website for a local bar with an interactive menu.",
+    stack: "Next.js, TypeScript, Framer Motion",
+    media: "/images/projects/App_Demo_Screenshot_Handsome.webp",
+    year: "2024",
+    github: "https://github.com/RybakovWebDev/handsome-menu",
+    live: "https://handsome-menu.vercel.app/",
+  },
+  {
     title: "MDS",
     slug: "MDS",
     description: "Full-stack website for looking up information related to films.",
     stack: "MERN",
     media: "/images/projects/App_Demo_Screenshot_MDS.webp",
-    mediaHomePageMP4: "Homepage_H264_MP4.mp4",
     year: "2023",
     github: "https://github.com/RybakovWebDev/MDS",
     live: "https://main.d3agl6wdyl1nit.amplifyapp.com/",
@@ -22,7 +31,7 @@ export const PROJECTS = [
   {
     title: "To-do List",
     slug: "Todolist",
-    description: "Minimalistic to-do list.",
+    description: "A simple, minimalist, responsive to-do list.",
     stack: "React",
     media: "/images/projects/App_Demo_Screenshot_ToDo.webp",
     year: "2022",
