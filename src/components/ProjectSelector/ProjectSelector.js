@@ -3,11 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, m, useInView, LazyMotion } from "framer-motion";
-import { ExternalLink, GitHub } from "react-feather";
 
 import styles from "./ProjectSelector.module.css";
 
-import ExternalLinkIcon from "../ExternalLinkIcon";
 import GradientBorders from "../GradientBorders";
 import ArrowButton from "../ArrowButton";
 

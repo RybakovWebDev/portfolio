@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "../projects.module.css";
-import todostyles from "./Handsome.module.css";
+import handsomeStyles from "./Handsome.module.css";
 
 import SectionNameLine from "@/components/SectionNameLine";
 import GradientBorders from "@/components/GradientBorders";
@@ -182,7 +182,7 @@ function Handsome() {
             <div className={styles.lineWrapper}>{lessonInView && <SectionNameLine fromRight={true} />}</div>
           </div>
           <div className={styles.sectionTextCenterWrapper}>
-            <div className={todostyles.lessonTextWrapper}>
+            <div className={handsomeStyles.lessonTextWrapper}>
               <p ref={lessonRef}>
                 While working on this website I gained valuable experience with how a Next.js App Router project is
                 structured and deployed. I learnt how Framer Motion can be optimized to reduce the overall app bundle
