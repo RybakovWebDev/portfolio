@@ -6,7 +6,6 @@ import styles from "./projectSlug.module.css";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MDS from "@/components/Projects/MDS";
 import Todolist from "@/components/Projects/Todolist";
