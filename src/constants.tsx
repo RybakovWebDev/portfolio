@@ -24,7 +24,7 @@ export const PROJECTS = [
     title: "MDS",
     slug: "MDS",
     description: "Full-stack website for looking up information related to films.",
-    stack: "MERN",
+    stack: "MERN, MUI",
     media: "/images/projects/App_Demo_Screenshot_MDS.webp",
     year: "2023",
     github: "https://github.com/RybakovWebDev/MDS",
