@@ -5,7 +5,11 @@ import { smoothSpring } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function SectionNameLine({ fromRight }) {
+interface SectionNameLineProps {
+  fromRight?: boolean;
+}
+
+function SectionNameLine({ fromRight }: SectionNameLineProps) {
   return (
     <LazyMotion features={loadFeatures}>
       <m.div

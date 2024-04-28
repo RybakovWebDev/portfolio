@@ -17,9 +17,9 @@ import ProjectLinks from "../ProjectLinks";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function Projects({ ...props }) {
+function ProjectSelector() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [animationDirection, setAnimationDirection] = useState(null);
+  const [animationDirection, setAnimationDirection] = useState<number | null>(null);
   const viewportSize = useViewportSize();
 
   const isSmallScreen = viewportSize.width < 1100;
@@ -48,7 +48,7 @@ function Projects({ ...props }) {
       x: 0,
       opacity: 1,
     },
-    exit: (animationDirection) => {
+    exit: (animationDirection: number) => {
       return {
         x: animationDirection < 0 ? 50 : -50,
         opacity: 0,
@@ -64,7 +64,6 @@ function Projects({ ...props }) {
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
         initial={{ opacity: 0, y: 100 }}
         transition={{ type: "spring", stiffness: 400, damping: 80, restDelta: 0.01 }}
-        {...props}
       >
         <ArrowButton direction='previous' action={prevProject} isVisible={currentIndex > 0} />
         <AnimatePresence mode={isSmallScreen ? "popLayout" : "wait"} custom={animationDirection}>
@@ -82,7 +81,7 @@ function Projects({ ...props }) {
               aria-label={`Open detailed project information for ${selectedProject.title}`}
             >
               <div className={styles.imageWrapper}>
-                <GradientBorders topBorder={50} rightBorder={50} bottomBorder={50} leftBorder={50}>
+                <GradientBorders topBorder={"50px"} rightBorder={"50px"} bottomBorder={"50px"} leftBorder={"50px"}>
                   <Image
                     className={styles.image}
                     src={selectedProject.media}
@@ -123,4 +122,4 @@ function Projects({ ...props }) {
   );
 }
 
-export default Projects;
+export default ProjectSelector;

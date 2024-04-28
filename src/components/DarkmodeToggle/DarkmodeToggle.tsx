@@ -7,7 +7,11 @@ import styles from "./DarkmodeToggle.module.css";
 
 import { LIGHT_COLORS, DARK_COLORS } from "@/constants";
 
-function DarkmodeToggle({ initialTheme }) {
+interface DarkmodeToggleProps {
+  initialTheme: string;
+}
+
+function DarkmodeToggle({ initialTheme }: DarkmodeToggleProps) {
   const [theme, setTheme] = useState(initialTheme);
 
   function handleClick() {

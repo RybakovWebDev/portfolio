@@ -1,4 +1,5 @@
 "use client";
+import { ReactNode } from "react";
 import { m, LazyMotion, useAnimation } from "framer-motion";
 import Image from "next/image";
 
@@ -8,7 +9,14 @@ import { smoothSpring } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function FileLink({ src, link, alt, children, ...props }) {
+interface FileLinkProps {
+  src: string;
+  link: string;
+  alt: string;
+  children: ReactNode;
+}
+
+function FileLink({ src, link, alt, children, ...props }: FileLinkProps) {
   const controls = useAnimation();
 
   const handleMouseEnter = () => {

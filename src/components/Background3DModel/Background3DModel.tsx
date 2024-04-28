@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { m, LazyMotion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { MeshBasicMaterial } from "three";
+import { Mesh, MeshBasicMaterial, Vector2 } from "three";
 import { EffectComposer, Glitch } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 
@@ -12,6 +12,19 @@ import { createXShape } from "@/helpers";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
+interface EffectsProps {
+  children: React.ReactElement<typeof Model>;
+}
+
+interface ModelProps {
+  shape: string;
+  setIsModelReady: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface Background3DModelProps {
+  shape: string;
+}
+
 const material = new MeshBasicMaterial({ color: "rgb(235, 235, 235)" });
 const xGeometry = createXShape(material);
 
@@ -19,7 +32,7 @@ const shapes = {
   x: xGeometry.children.map((child, index) => (
     <group key={index} scale={[1.7, 1.7, 1.7]} rotation={[0, 0, Math.PI / 4]}>
       <mesh>
-        <primitive attach='geometry' object={child.geometry} />
+        <primitive attach='geometry' object={(child as Mesh).geometry} />
         <primitive attach='material' object={material} />
       </mesh>
     </group>
@@ -28,13 +41,13 @@ const shapes = {
   torus: <torusGeometry attach='geometry' args={[3, 0.5, 7, 25]} />,
 };
 
-const Effects = ({ children }) => {
+function Effects({ children }: EffectsProps) {
   return (
     <EffectComposer>
       <Glitch
-        delay={[3, 7]}
-        duration={[0.1, 0.2]}
-        strength={[0.1, 0.5]}
+        delay={new Vector2(3, 7)}
+        duration={new Vector2(0.1, 0.2)}
+        strength={new Vector2(0.1, 0.5)}
         columns={0.02}
         mode={GlitchMode.SPORADIC}
         active
@@ -43,13 +56,13 @@ const Effects = ({ children }) => {
       {children}
     </EffectComposer>
   );
-};
+}
 
-const Model = ({ shape, setIsModelReady }) => {
+function Model({ shape, setIsModelReady }: ModelProps) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [rotationDirection, setRotationDirection] = useState(1);
 
-  const meshRef = useRef();
+  const meshRef = useRef<Mesh | null>(null);
 
   useEffect(() => {
     setRotationDirection(Math.random() > 0.5 ? 1 : -1);
@@ -87,9 +100,9 @@ const Model = ({ shape, setIsModelReady }) => {
       {shapes[shape]}
     </mesh>
   );
-};
+}
 
-function Background3DModel({ shape }) {
+function Background3DModel({ shape }: Background3DModelProps) {
   const [isModelReady, setIsModelReady] = useState(false);
   return (
     <LazyMotion features={loadFeatures}>

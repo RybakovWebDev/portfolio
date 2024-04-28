@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { MeshBasicMaterial, TextureLoader } from "three";
+import { Mesh, MeshBasicMaterial, TextureLoader, Vector3 } from "three";
 import { m, LazyMotion } from "framer-motion";
 
 import styles from "./AwsIconAnimation.module.css";
@@ -11,10 +11,14 @@ import { AWSICONS } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function Cube({ onLoad }) {
+interface CubeProps {
+  onLoad: () => void;
+}
+
+function Cube({ onLoad }: CubeProps) {
   const [isRotating, setIsRotating] = useState(false);
 
-  const meshRef = useRef();
+  const meshRef = useRef<Mesh | null>(null);
   const rotationRef = useRef({ x: 0, y: 0 });
   const timerIdRef = useRef(null);
   const targetScaleRef = useRef(1);
@@ -27,13 +31,13 @@ function Cube({ onLoad }) {
   const materials = textures.map((texture) => new MeshBasicMaterial({ map: texture }));
 
   useFrame((state, delta) => {
-    if (!isRotating) {
-      meshRef.current.rotation.y += delta;
-      meshRef.current.rotation.x += 0.3 * delta;
-    }
     if (meshRef.current) {
+      if (!isRotating) {
+        meshRef.current.rotation.y += delta;
+        meshRef.current.rotation.x += 0.3 * delta;
+      }
       meshRef.current.scale.lerp(
-        { x: targetScaleRef.current, y: targetScaleRef.current, z: targetScaleRef.current },
+        new Vector3(targetScaleRef.current, targetScaleRef.current, targetScaleRef.current),
         0.1
       );
     }
@@ -63,7 +67,11 @@ function Cube({ onLoad }) {
       <ambientLight />
       <mesh
         ref={meshRef}
-        onPointerDown={(e) => (rotationRef.current = { x: meshRef.current.rotation.x, y: meshRef.current.rotation.y })}
+        onPointerDown={(e) => {
+          if (meshRef.current) {
+            rotationRef.current = { x: meshRef.current.rotation.x, y: meshRef.current.rotation.y };
+          }
+        }}
         material={materials}
       >
         <boxGeometry args={[4, 4, 4]} />

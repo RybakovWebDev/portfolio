@@ -6,11 +6,10 @@ import { m, LazyMotion, AnimatePresence } from "framer-motion";
 
 import styles from "./Header.module.css";
 
+import DarkmodeToggle from "@/components/DarkmodeToggle";
+
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
-
-import DarkmodeToggle from "../DarkmodeToggle";
-
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
 
@@ -18,8 +17,12 @@ const loadFeatures = () => import("../../featuresMax").then((res) => res.default
 
 const animationFinished = { opacity: 1, scale: 1 };
 
-function Header({ initialTheme }) {
-  const [hoveredNavItem, setHoveredNavItem] = useState(null);
+interface HeaderProps {
+  initialTheme: string;
+}
+
+function Header({ initialTheme }: HeaderProps) {
+  const [hoveredNavItem, setHoveredNavItem] = useState<string | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const smallScreen = useViewportSize().width < 1430;
@@ -50,7 +53,7 @@ function Header({ initialTheme }) {
     }
   });
 
-  const handleLinkClick = (e, slug) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
     e.preventDefault();
 
     if (pathname !== "/") router.push(`/#${slug}`);

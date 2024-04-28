@@ -1,10 +1,9 @@
 "use client";
 import styles from "./Footer.module.css";
 
-import ExternalLinkIcon from "../ExternalLinkIcon";
+import ExternalLinkIcon from "@/components/ExternalLinkIcon";
 
 import { useRefsContext } from "@/contexts/RefsContext";
-
 import { CONTACTS } from "@/constants";
 
 function Footer() {

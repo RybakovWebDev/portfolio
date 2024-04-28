@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Cookies from "js-cookie";
 import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "../projects.module.css";
@@ -18,7 +17,6 @@ const NameGeneratorDemo = dynamic(() => import("@/components/NameGeneratorDemo")
 const AwsIconAnimation = dynamic(() => import("@/components/AwsIconAnimation"));
 
 import useViewportSize from "@/hooks/useViewportSize";
-
 import { PROJECTS, finalVerticalOffset, initialVerticalOffset } from "@/constants";
 import { calculateVideoHeight } from "@/helpers";
 
@@ -27,22 +25,17 @@ const loadFeatures = () => import("../../../features").then((res) => res.default
 const project = PROJECTS[1];
 
 function MDS() {
-  const [theme, setTheme] = useState();
   const viewportSize = useViewportSize();
 
-  const goalRef = useRef();
-  const challengeRef = useRef();
-  const nameDemoRef = useRef();
-  const lessonRef = useRef();
+  const goalRef = useRef<HTMLDivElement>(null);
+  const challengeRef = useRef<HTMLDivElement>(null);
+  const nameDemoRef = useRef<HTMLDivElement>(null);
+  const lessonRef = useRef<HTMLParagraphElement>(null);
 
   const goalInView = useInView(goalRef, { once: true });
   const challengeInView = useInView(challengeRef, { once: true });
   const nameDemoInView = useInView(nameDemoRef, { once: true });
   const lessonInView = useInView(lessonRef, { once: true });
-
-  useEffect(() => {
-    setTheme(Cookies.get("color-theme"));
-  }, [setTheme]);
 
   const container = {
     hidden: initialVerticalOffset,

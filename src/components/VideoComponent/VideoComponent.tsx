@@ -1,7 +1,16 @@
 import React, { useRef, useEffect } from "react";
 
-function VideoComponent({ src, srcVP9, width, height, handleLoadedData, playing }) {
-  const videoRef = useRef(null);
+interface VideoComponentProps {
+  src?: string;
+  srcVP9?: string;
+  width?: number;
+  height: number;
+  handleLoadedData: () => void;
+  playing: boolean;
+}
+
+function VideoComponent({ src, srcVP9, width, height, handleLoadedData, playing }: VideoComponentProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (playing) {

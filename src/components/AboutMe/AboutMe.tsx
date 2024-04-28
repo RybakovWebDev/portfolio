@@ -5,7 +5,6 @@ import styles from "./AboutMe.module.css";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
-
 import { finalVerticalOffset, initialVerticalOffset } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);

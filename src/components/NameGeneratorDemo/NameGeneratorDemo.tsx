@@ -5,7 +5,7 @@ import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generato
 
 import styles from "./NameGeneratorDemo.module.css";
 
-import GradientBorders from "../GradientBorders";
+import GradientBorders from "@/components/GradientBorders";
 
 import { smoothSpring } from "@/constants";
 
@@ -43,7 +43,7 @@ function NameGeneratorDemo() {
 
   return (
     <div className={styles.wrapper}>
-      <GradientBorders topBorder={"0"} bottomBorder={"0"}>
+      <GradientBorders topBorder={"0px"} bottomBorder={"0px"}>
         <div className={styles.nameWrapper}>
           <LazyMotion features={loadFeatures}>
             <m.p className={styles.name} animate={controls} transition={smoothSpring}>

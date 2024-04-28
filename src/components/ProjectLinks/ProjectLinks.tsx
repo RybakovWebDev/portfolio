@@ -1,10 +1,15 @@
 import { ExternalLink, GitHub } from "react-feather";
 
-import ExternalLinkIcon from "../ExternalLinkIcon";
+import ExternalLinkIcon from "@/components/ExternalLinkIcon";
 
 import styles from "./ProjectLinks.module.css";
 
-function ProjectLinks({ live, github }) {
+interface ProjectLinksProps {
+  live: string;
+  github: string;
+}
+
+function ProjectLinks({ live, github }: ProjectLinksProps) {
   return (
     <div className={styles.wrapper}>
       <ExternalLinkIcon aria-label='Open deployed project' link={live}>

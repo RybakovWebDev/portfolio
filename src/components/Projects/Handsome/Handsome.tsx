@@ -14,7 +14,6 @@ import ProjectLinks from "@/components/ProjectLinks";
 const BackToTop = dynamic(() => import("@/components/BackToTop"));
 
 import useViewportSize from "@/hooks/useViewportSize";
-
 import { calculateVideoHeight } from "@/helpers";
 import { PROJECTS } from "@/constants";
 
@@ -23,10 +22,10 @@ const loadFeatures = () => import("../../../features").then((res) => res.default
 const project = PROJECTS[0];
 
 function Handsome() {
-  const goalRef = useRef();
-  const challengeRef = useRef();
-  const heroRef = useRef();
-  const lessonRef = useRef();
+  const goalRef = useRef<HTMLDivElement>(null);
+  const challengeRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const lessonRef = useRef<HTMLParagraphElement>(null);
 
   const viewportSize = useViewportSize();
 

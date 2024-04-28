@@ -1,11 +1,11 @@
 "use client";
-import { AnimatePresence, m, LazyMotion } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 
 import styles from "./CallToAction.module.css";
 
-import FileLink from "../FileLink";
+import FileLink from "@/components/FileLink";
 
-import { RESUME, opacity0 } from "@/constants";
+import { RESUME } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 

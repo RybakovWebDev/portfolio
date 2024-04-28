@@ -1,9 +1,9 @@
 "use client";
 import styles from "./HomepageBackground.module.css";
 
-import useViewportSize from "@/hooks/useViewportSize";
+import Background3DModel from "@/components/Background3DModel";
 
-import Background3DModel from "../Background3DModel";
+import useViewportSize from "@/hooks/useViewportSize";
 
 function HomepageBackground() {
   const largeScreen = useViewportSize().width > 1090;

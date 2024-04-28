@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 import { GitHub, Linkedin, Mail } from "react-feather";
 
 import AmplifyIcon from "../public/images/aws-icons/Amplify.webp";
@@ -178,7 +180,16 @@ export const opacity0 = {
   opacity: 0,
 };
 
-export const LIGHT_COLORS = {
+interface ThemeColors extends CSSProperties {
+  "--color-text": string;
+  "--color-text-secondary": string;
+  "--color-underline": string;
+  "--color-background": string;
+  "--color-background-secondary": string;
+  "--color-gradient-lightness": string;
+}
+
+export const LIGHT_COLORS: ThemeColors = {
   "--color-text": "hsl(0 0% 0%)",
   "--color-text-secondary": "hsl(0 0% 0%)",
   "--color-underline": "0, 0, 0",
@@ -187,7 +198,7 @@ export const LIGHT_COLORS = {
   "--color-gradient-lightness": "92%",
 };
 
-export const DARK_COLORS = {
+export const DARK_COLORS: ThemeColors = {
   "--color-text": "hsl(0 0% 92%)",
   "--color-text-secondary": "hsl(0 0% 0%)",
   "--color-underline": "250, 250, 250",

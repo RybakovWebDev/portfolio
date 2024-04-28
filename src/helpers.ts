@@ -1,6 +1,6 @@
-import { ExtrudeGeometry, Shape, Mesh, Group } from "three";
+import { ExtrudeGeometry, Shape, Mesh, Group, Material } from "three";
 
-export const createXShape = (material) => {
+export const createXShape = (material: Material) => {
   const shape1 = new Shape();
   shape1.moveTo(-0.375, -2);
   shape1.lineTo(0.375, -2);
@@ -34,17 +34,17 @@ export const createXShape = (material) => {
   return group;
 };
 
-export const scrollToRef = (ref) => {
-  const isProjectSelector = ref.current.className.includes("ProjectSelector");
+export const scrollToRef = (ref: React.RefObject<HTMLElement>): void => {
+  const isProjectSelector = ref.current?.className.includes("ProjectSelector");
   const smallScreen = window.innerWidth < 1430;
-  ref.current.scrollIntoView({
+  ref.current?.scrollIntoView({
     behavior: "smooth",
     block: smallScreen && !isProjectSelector ? "start" : "center",
   });
   window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
 };
 
-export const calculateVideoHeight = (viewportWidth, maxHeight, minHeight = 125) => {
+export const calculateVideoHeight = (viewportWidth: number, maxHeight: number, minHeight = 125) => {
   const minWidth = 280;
   const maxWidth = 1430;
 

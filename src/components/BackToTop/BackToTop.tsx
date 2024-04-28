@@ -12,8 +12,7 @@ const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function BackToTop() {
   const { headerRef } = useRefsContext();
-  const handleLinkClick = (e) => {
-    e.preventDefault();
+  const handleClick = () => {
     headerRef.current.scrollIntoView({ behavior: "smooth" });
   };
   const showButton = !useInView(headerRef);
@@ -25,8 +24,8 @@ function BackToTop() {
           <m.button
             aria-label='Back to top of the page'
             className={styles.backBtn}
-            onClick={(e) => handleLinkClick(e)}
-            onTap={(e) => handleLinkClick(e)}
+            onClick={handleClick}
+            onTap={handleClick}
             whileTap={{ scale: 0.9 }}
             whileHover={{
               opacity: 1,

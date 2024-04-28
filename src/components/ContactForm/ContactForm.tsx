@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { AnimatePresence, m, LazyMotion } from "framer-motion";
 import { X } from "react-feather";
 
@@ -8,7 +8,6 @@ import styles from "./ContactForm.module.css";
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
 import { scrollToRef } from "@/helpers";
-
 import { opacity0, opacity1 } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
@@ -28,8 +27,8 @@ function ContactForm() {
 
   const smallScreen = useViewportSize().width < 1100;
 
-  const formRef = useRef();
-  const nameInputRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
+  const nameInputRef = useRef<HTMLInputElement>(null);
 
   const clearForm = () => {
     setNameText("");
@@ -60,20 +59,20 @@ function ContactForm() {
     setMessageSent(false);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       const response = await fetch("https://formspree.io/f/xnqejnez", {
         method: "POST",
-        body: new FormData(e.target),
+        body: new FormData(e.currentTarget),
         headers: {
           Accept: "application/json",
         },
       });
 
       if (!response.ok) {
-        throw new Error(response.status);
+        throw new Error(response.status.toString());
       }
 
       clearForm();
@@ -179,8 +178,8 @@ function ContactForm() {
                 <label htmlFor='message'>Your message:</label>
                 <textarea
                   name='message'
-                  cols='60'
-                  rows='10'
+                  cols={60}
+                  rows={8}
                   required
                   spellCheck
                   placeholder='Message text'

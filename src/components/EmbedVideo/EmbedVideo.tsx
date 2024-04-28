@@ -6,22 +6,29 @@ import { Pause } from "react-feather";
 
 import styles from "./EmbedVideo.module.css";
 
+import Spinner from "@/components/Spinner";
+import VideoComponent from "@/components/VideoComponent";
+
 import useViewportSize from "@/hooks/useViewportSize";
-
-import Spinner from "../Spinner";
-import VideoComponent from "../VideoComponent";
-
 import { smoothSpring } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
+interface EmbedVideoProps {
+  src?: string;
+  srcVP9?: string;
+  width?: number;
+  height: number;
+  showSpinner?: boolean;
+}
+
+function EmbedVideo({ src, srcVP9, width, height, showSpinner }: EmbedVideoProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [playing, setPlaying] = useState(true);
 
   const smallScreen = useViewportSize().width < 1100;
 
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(videoRef, { once: true });
 
   const handleLoadedData = () => {
@@ -46,7 +53,7 @@ function EmbedVideo({ src, srcVP9, width, height, showSpinner }) {
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView && isLoaded ? [0, 1] : 0, y: isInView ? 0 : 20 }}
-            transition={({ duration: 0.3 }, smoothSpring)}
+            transition={{ duration: 0.3, ...smoothSpring }}
           >
             <m.div
               className={styles.controlIconWrapper}

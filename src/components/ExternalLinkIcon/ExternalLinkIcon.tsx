@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { m, LazyMotion } from "framer-motion";
 
 import styles from "./ExternalLinkIcon.module.css";
@@ -6,7 +7,12 @@ import { smoothSpring } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function ExternalLinkIcon({ link, children, ...props }) {
+interface ExternalLinkIconProps {
+  link: string;
+  children: ReactNode;
+}
+
+function ExternalLinkIcon({ link, children, ...props }: ExternalLinkIconProps) {
   return (
     <LazyMotion features={loadFeatures}>
       <m.a

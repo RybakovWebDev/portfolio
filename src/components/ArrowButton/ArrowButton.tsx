@@ -6,12 +6,17 @@ import { ChevronLeft, ChevronRight } from "react-feather";
 import styles from "./ArrowButton.module.css";
 
 import useViewportSize from "@/hooks/useViewportSize";
-
 import { shevronAnimation, smoothSpring } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-function ArrowButton({ direction, action, isVisible }) {
+interface ArrowButtonProps {
+  direction: string;
+  action: () => void;
+  isVisible: boolean;
+}
+
+function ArrowButton({ direction, action, isVisible }: ArrowButtonProps) {
   const smallScreen = useViewportSize().width < 1100;
   const xDirection = direction === "next" ? 15 : -15;
   return isVisible ? (
