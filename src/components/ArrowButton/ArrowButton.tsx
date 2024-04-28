@@ -13,12 +13,14 @@ const loadFeatures = () => import("../../features").then((res) => res.default);
 interface ArrowButtonProps {
   direction: string;
   action: () => void;
+  isNearEdge: boolean;
   isVisible: boolean;
 }
 
-function ArrowButton({ direction, action, isVisible }: ArrowButtonProps) {
+function ArrowButton({ direction, action, isNearEdge, isVisible }: ArrowButtonProps) {
   const smallScreen = useViewportSize().width < 1100;
-  const xDirection = direction === "next" ? 15 : -15;
+  const xDirection = direction === "next" ? 10 : -10;
+
   return isVisible ? (
     <LazyMotion features={loadFeatures}>
       <m.button
@@ -38,16 +40,16 @@ function ArrowButton({ direction, action, isVisible }: ArrowButtonProps) {
       >
         <m.div
           className={styles.iconWrapper}
-          whileTap={smallScreen ? { x: 0 } : { x: xDirection }}
+          whileTap={{ scale: 0.8 }}
           whileHover={{
             x: [0, xDirection, 0],
             transition: shevronAnimation,
           }}
           initial={{ x: 0 }}
           animate={
-            smallScreen
+            smallScreen && isNearEdge
               ? {
-                  x: [0, xDirection - 5, 0],
+                  x: [0, xDirection, 0],
                   transition: { repeat: Infinity, delay: 3, repeatDelay: 3, duration: 1 },
                 }
               : {}
