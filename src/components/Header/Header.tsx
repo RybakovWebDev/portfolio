@@ -9,7 +9,6 @@ import styles from "./Header.module.css";
 import DarkmodeToggle from "@/components/DarkmodeToggle";
 
 import { useRefsContext } from "@/contexts/RefsContext";
-import useViewportSize from "@/hooks/useViewportSize";
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
 
@@ -25,9 +24,7 @@ function Header({ initialTheme }: HeaderProps) {
   const [hoveredNavItem, setHoveredNavItem] = useState<string | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const smallScreen = useViewportSize().width < 1430;
-
-  const { headerRef, projectSelectorRef, projectNameRef, aboutRef, footerRef } = useRefsContext();
+  const { headerRef, projectSelectorRef, aboutRef, footerRef } = useRefsContext();
 
   const router = useRouter();
   const pathname = usePathname();
@@ -45,7 +42,7 @@ function Header({ initialTheme }: HeaderProps) {
     const hash = window.location.hash;
 
     if (hash === "#projects") {
-      scrollToRef(smallScreen ? projectNameRef : projectSelectorRef);
+      scrollToRef(projectSelectorRef);
     } else if (hash === "#about") {
       scrollToRef(aboutRef);
     } else if (hash === "#contact") {
@@ -60,7 +57,7 @@ function Header({ initialTheme }: HeaderProps) {
 
     if (pathname === "/") {
       if (slug === "projects") {
-        scrollToRef(smallScreen ? projectNameRef : projectSelectorRef);
+        scrollToRef(projectSelectorRef);
       } else if (slug === "about") {
         scrollToRef(aboutRef);
       } else if (slug === "contact") {

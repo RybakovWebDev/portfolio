@@ -46,6 +46,6 @@
   .text {
     width: 80%;
     max-width: 40rem;
-    font-size: clamp(10px, 5vw, 20px);
+    font-size: clamp(18px, 4vw, 20px);
   }
 }

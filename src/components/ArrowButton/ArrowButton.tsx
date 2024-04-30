@@ -28,10 +28,14 @@ function ArrowButton({ direction, action, isNearEdge, isVisible }: ArrowButtonPr
         className={styles.switchProjectButton}
         onClick={action}
         onTouchEnd={action}
-        whileHover={{
-          background: "var(--color-background-secondary)",
-          opacity: 0.8,
-        }}
+        whileHover={
+          smallScreen
+            ? {}
+            : {
+                background: "var(--color-background-secondary)",
+                opacity: 0.8,
+              }
+        }
         animate={{
           opacity: 1,
           background: "rgb(0, 0, 0, 0)",
@@ -40,11 +44,15 @@ function ArrowButton({ direction, action, isNearEdge, isVisible }: ArrowButtonPr
       >
         <m.div
           className={styles.iconWrapper}
-          whileTap={{ scale: 0.8 }}
-          whileHover={{
-            x: [0, xDirection, 0],
-            transition: shevronAnimation,
-          }}
+          whileTap={{ x: xDirection }}
+          whileHover={
+            smallScreen
+              ? {}
+              : {
+                  x: [0, xDirection, 0],
+                  transition: shevronAnimation,
+                }
+          }
           initial={{ x: 0 }}
           animate={
             smallScreen && isNearEdge

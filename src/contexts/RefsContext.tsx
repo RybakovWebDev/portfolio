@@ -5,7 +5,6 @@ interface RefsContextType {
   headerRef: RefObject<HTMLElement>;
   heroRef: RefObject<HTMLHeadingElement>;
   projectSelectorRef: RefObject<HTMLElement>;
-  projectNameRef: RefObject<HTMLDivElement>;
   aboutRef: RefObject<HTMLElement>;
   contactRef: RefObject<HTMLElement>;
   footerRef: RefObject<HTMLParagraphElement>;
@@ -17,15 +16,12 @@ export function RefsProvider({ children }) {
   const headerRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLHeadingElement>(null);
   const projectSelectorRef = useRef<HTMLElement>(null);
-  const projectNameRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLParagraphElement>(null);
 
   return (
-    <RefsContext.Provider
-      value={{ headerRef, heroRef, projectSelectorRef, projectNameRef, aboutRef, contactRef, footerRef }}
-    >
+    <RefsContext.Provider value={{ headerRef, heroRef, projectSelectorRef, aboutRef, contactRef, footerRef }}>
       {children}
     </RefsContext.Provider>
   );

@@ -44,7 +44,7 @@ function FileLink({ src, link, alt, children, ...props }: FileLinkProps) {
       {...props}
     >
       <LazyMotion features={loadFeatures}>
-        <m.div animate={controls} initial={{ opacity: 0.5, y: 0 }} transition={smoothSpring}>
+        <m.div animate={controls} initial={{ opacity: 0.8, y: 0 }} transition={smoothSpring}>
           <Image className={styles.image} src={src} alt={alt} fill sizes='100px' />
         </m.div>
       </LazyMotion>

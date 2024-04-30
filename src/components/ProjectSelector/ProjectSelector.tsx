@@ -22,7 +22,7 @@ function ProjectSelector() {
   const [animationDirection, setAnimationDirection] = useState<number | null>(null);
   const viewportSize = useViewportSize();
 
-  const { projectSelectorRef, projectNameRef } = useRefsContext();
+  const { projectSelectorRef } = useRefsContext();
   const isInView = useInView(projectSelectorRef, { once: true, amount: 0.4 });
 
   const isSmallScreen = viewportSize.width < 1100;
@@ -102,7 +102,7 @@ function ProjectSelector() {
               </Link>
             </m.div>
 
-            <m.div ref={projectNameRef} className={styles.infoWrapper} onPanEnd={(e, info) => handleGesture(e, info)}>
+            <m.div className={styles.infoWrapper} onPanEnd={(e, info) => handleGesture(e, info)}>
               <h2 className={styles.title}>{selectedProject.title}</h2>
               <p className={styles.year}>{selectedProject.year}</p>
               <p className={styles.description}>{selectedProject.description}</p>
