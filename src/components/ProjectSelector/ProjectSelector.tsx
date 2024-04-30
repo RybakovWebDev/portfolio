@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence, m, useInView, LazyMotion } from "framer-motion";
+import { AnimatePresence, m, useInView, LazyMotion, PanInfo } from "framer-motion";
 
 import styles from "./ProjectSelector.module.css";
 
@@ -22,12 +22,13 @@ function ProjectSelector() {
   const [animationDirection, setAnimationDirection] = useState<number | null>(null);
   const viewportSize = useViewportSize();
 
-  const isSmallScreen = viewportSize.width < 1100;
-
   const { projectSelectorRef, projectNameRef } = useRefsContext();
-
   const isInView = useInView(projectSelectorRef, { once: true, amount: 0.4 });
+
+  const isSmallScreen = viewportSize.width < 1100;
   const selectedProject = PROJECTS[currentIndex];
+  const firstProject = currentIndex === 0;
+  const lastProject = currentIndex === PROJECTS.length - 1;
 
   const prevProject = () => {
     setAnimationDirection(-1);
@@ -56,6 +57,14 @@ function ProjectSelector() {
     },
   };
 
+  const handleGesture = (e: PointerEvent, info: PanInfo) => {
+    if (info.offset.x < -50 && !lastProject) {
+      nextProject();
+    } else if (info.offset.x > 50 && !firstProject) {
+      prevProject();
+    }
+  };
+
   return (
     <LazyMotion features={loadFeatures}>
       <m.section
@@ -65,12 +74,7 @@ function ProjectSelector() {
         initial={{ opacity: 0, y: 100 }}
         transition={{ type: "spring", stiffness: 400, damping: 80, restDelta: 0.01 }}
       >
-        <ArrowButton
-          direction='previous'
-          action={prevProject}
-          isNearEdge={currentIndex === PROJECTS.length - 1}
-          isVisible={currentIndex > 0}
-        />
+        <ArrowButton direction='previous' action={prevProject} isNearEdge={lastProject} isVisible={!firstProject} />
         <AnimatePresence mode={isSmallScreen ? "popLayout" : "wait"} custom={animationDirection}>
           <m.div
             key={selectedProject.slug}
@@ -81,11 +85,11 @@ function ProjectSelector() {
             exit='exit'
             transition={{ type: "spring", damping: 50, stiffness: 700 }}
           >
-            <Link
-              href={`/${selectedProject.slug}`}
-              aria-label={`Open detailed project information for ${selectedProject.title}`}
-            >
-              <div className={styles.imageWrapper}>
+            <m.div className={styles.imageWrapper}>
+              <Link
+                href={`/${selectedProject.slug}`}
+                aria-label={`Open detailed project information for ${selectedProject.title}`}
+              >
                 <GradientBorders topBorder={"50px"} rightBorder={"50px"} bottomBorder={"50px"} leftBorder={"50px"}>
                   <Image
                     className={styles.image}
@@ -95,10 +99,10 @@ function ProjectSelector() {
                     sizes={viewportSize.height > 1000 ? "600px" : "400px"}
                   />
                 </GradientBorders>
-              </div>
-            </Link>
+              </Link>
+            </m.div>
 
-            <div ref={projectNameRef} className={styles.infoWrapper}>
+            <m.div ref={projectNameRef} className={styles.infoWrapper} onPanEnd={(e, info) => handleGesture(e, info)}>
               <h2 className={styles.title}>{selectedProject.title}</h2>
               <p className={styles.year}>{selectedProject.year}</p>
               <p className={styles.description}>{selectedProject.description}</p>
@@ -116,17 +120,12 @@ function ProjectSelector() {
                   View project details
                 </m.span>
               </Link>
-            </div>
+            </m.div>
 
             <ProjectLinks live={selectedProject.live} github={selectedProject.github} />
           </m.div>
         </AnimatePresence>
-        <ArrowButton
-          direction='next'
-          action={nextProject}
-          isNearEdge={currentIndex === 0}
-          isVisible={currentIndex < PROJECTS.length - 1}
-        />
+        <ArrowButton direction='next' action={nextProject} isNearEdge={firstProject} isVisible={!lastProject} />
       </m.section>
     </LazyMotion>
   );

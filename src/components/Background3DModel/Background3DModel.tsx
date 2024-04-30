@@ -100,7 +100,7 @@ function Model({ shape, setIsModelReady }: ModelProps) {
     <motion.mesh
       ref={meshRef as any}
       material={material}
-      initial={{ scale: 0.8 }}
+      initial={{ scale: 0.7 }}
       animate={{ scale: 1 }}
       transition={{ type: "spring", damping: 50, stiffness: 500 }}
     >
