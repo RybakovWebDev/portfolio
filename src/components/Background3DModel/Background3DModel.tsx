@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { m, LazyMotion } from "framer-motion";
+import { motion } from "framer-motion-3d";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh, MeshBasicMaterial, Vector2 } from "three";
 import { EffectComposer, Glitch } from "@react-three/postprocessing";
@@ -96,9 +97,15 @@ function Model({ shape, setIsModelReady }: ModelProps) {
   });
 
   return (
-    <mesh ref={meshRef} material={material}>
+    <motion.mesh
+      ref={meshRef as any}
+      material={material}
+      initial={{ scale: 0.8 }}
+      animate={{ scale: 1 }}
+      transition={{ type: "spring", damping: 50, stiffness: 500 }}
+    >
       {shapes[shape]}
-    </mesh>
+    </motion.mesh>
   );
 }
 
