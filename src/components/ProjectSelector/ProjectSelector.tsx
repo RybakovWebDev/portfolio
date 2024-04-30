@@ -58,6 +58,8 @@ function ProjectSelector() {
   };
 
   const handleGesture = (e: PointerEvent, info: PanInfo) => {
+    if (e.pointerType !== "touch") return;
+
     if (info.offset.x < -50 && !lastProject) {
       nextProject();
     } else if (info.offset.x > 50 && !firstProject) {
