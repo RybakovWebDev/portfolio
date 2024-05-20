@@ -8,6 +8,9 @@ import { CONTACTS } from "@/constants";
 
 function Footer() {
   const { footerRef } = useRefsContext();
+
+  const currentYear = new Date().getFullYear().toString();
+
   return (
     <footer className={styles.wrapper}>
       <div className={styles.iconsWrapper}>
@@ -22,7 +25,9 @@ function Footer() {
           );
         })}
       </div>
-      <p ref={footerRef}>© {new Date().getFullYear()} by Andrey Rybakov</p>
+      <p ref={footerRef}>
+        © <time dateTime={currentYear}>{currentYear}</time> Andrey Rybakov
+      </p>
     </footer>
   );
 }
