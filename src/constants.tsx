@@ -2,6 +2,9 @@ import { CSSProperties } from "react";
 
 import { GitHub, Linkedin, Mail } from "react-feather";
 
+import handsomeMenuImage from "../public/images/projects/App_Demo_Screenshot_Handsome.webp";
+import mdsImage from "../public/images/projects/App_Demo_Screenshot_MDS.webp";
+import todoListImage from "../public/images/projects/App_Demo_Screenshot_ToDo.webp";
 import AmplifyIcon from "../public/images/aws-icons/Amplify.webp";
 import CloudFrontIcon from "../public/images/aws-icons/CloudFront.webp";
 import CodePipelineIcon from "../public/images/aws-icons/CodePipeline.webp";
@@ -15,7 +18,7 @@ export const PROJECTS = [
     slug: "Handsome",
     description: "Static website for a local bar with an interactive menu.",
     stack: "Next.js, TypeScript, Framer Motion",
-    media: "/images/projects/App_Demo_Screenshot_Handsome.webp",
+    media: handsomeMenuImage,
     year: "2024",
     github: "https://github.com/RybakovWebDev/handsome-menu",
     live: "https://handsome-menu.vercel.app/",
@@ -25,7 +28,7 @@ export const PROJECTS = [
     slug: "MDS",
     description: "Full-stack website for looking up information related to films.",
     stack: "MERN, MUI",
-    media: "/images/projects/App_Demo_Screenshot_MDS.webp",
+    media: mdsImage,
     year: "2023",
     github: "https://github.com/RybakovWebDev/MDS",
     live: "https://main.d3agl6wdyl1nit.amplifyapp.com/",
@@ -35,7 +38,7 @@ export const PROJECTS = [
     slug: "Todolist",
     description: "A simple, minimalist, responsive to-do list.",
     stack: "React",
-    media: "/images/projects/App_Demo_Screenshot_ToDo.webp",
+    media: todoListImage,
     year: "2022",
     github: "https://github.com/RybakovWebDev/todo-list-react-2022",
     live: "https://todo-list-react-2022.pages.dev/",
