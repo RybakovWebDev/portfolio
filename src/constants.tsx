@@ -94,29 +94,6 @@ export const CONTACTS = [
   },
 ];
 
-export const TECHICONS = [
-  "/images/icons/React_logo512.png",
-  "/images/icons/Nextjs-logo.webp",
-  "/images/icons/Unofficial_JavaScript_logo_2.svg",
-  "/images/icons/CSS3logoandwordmark.svg",
-  "/images/icons/Framer-Motion.webp",
-  "/images/icons/react-spring.webp",
-  "/images/icons/material-ui-icon-2048x1626-on580ia9.webp",
-  "/images/icons/Node.js_logo.svg",
-  "/images/icons/MongoDB_Logo.svg",
-  "/images/icons/Amazon_Web_Services_Logo.svg",
-  "/images/icons/Axios_(computer_library)_logo.webp",
-  "/images/icons/Git-logo.svg",
-  "/images/icons/HTML5_logo_and_wordmark.svg",
-  "/images/icons/Bootstrap_logo.svg",
-  "/images/icons/Npm-logo.svg",
-  "/images/icons/react-router-stacked-color.svg",
-  "/images/icons/Redux_logo.svg",
-  "/images/icons/Firebase_Logo.svg",
-  "/images/icons/JQuery-Logo.svg",
-  "/images/icons/Tailwind_CSS_logo.svg",
-];
-
 export const AWSICONS = [
   {
     name: "ec2",
@@ -166,14 +143,6 @@ export const initialVerticalOffset = {
 export const finalVerticalOffset = {
   y: 0,
   opacity: 1,
-};
-
-export const duration300 = {
-  duration: 0.3,
-};
-
-export const duration500 = {
-  duration: 0.5,
 };
 
 export const opacity1 = {
