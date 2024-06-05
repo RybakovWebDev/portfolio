@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useRef, useContext, RefObject } from "react";
+import { createContext, useRef, useContext, RefObject, ReactNode } from "react";
 
 interface RefsContextType {
   headerRef: RefObject<HTMLElement>;
@@ -12,7 +12,7 @@ interface RefsContextType {
 
 const RefsContext = createContext<RefsContextType | undefined>(undefined);
 
-export function RefsProvider({ children }) {
+export function RefsProvider({ children }: { children: ReactNode }) {
   const headerRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLHeadingElement>(null);
   const projectSelectorRef = useRef<HTMLElement>(null);
