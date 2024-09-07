@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, m, useInView, LazyMotion, PanInfo } from "framer-motion";
@@ -8,18 +8,19 @@ import styles from "./ProjectSelector.module.css";
 
 import GradientBorders from "../GradientBorders";
 import ArrowButton from "../ArrowButton";
+import ProjectLinks from "../ProjectLinks";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
 
 import { PROJECTS } from "@/constants";
-import ProjectLinks from "../ProjectLinks";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function ProjectSelector() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState<number[]>([]);
   const viewportSize = useViewportSize();
 
   const { projectSelectorRef } = useRefsContext();
@@ -40,6 +41,10 @@ function ProjectSelector() {
     setCurrentIndex((oldIndex) => (oldIndex + 1) % PROJECTS.length);
   };
 
+  const handleImageLoad = (index: number) => {
+    setLoadedImages((prev) => [...prev, index]);
+  };
+
   const variants = {
     enter: {
       x: animationDirection ? (animationDirection > 0 ? 50 : -50) : 0,
@@ -47,7 +52,7 @@ function ProjectSelector() {
     },
     center: {
       x: 0,
-      opacity: 1,
+      opacity: loadedImages.includes(currentIndex) ? 1 : 0,
     },
     exit: (animationDirection: number) => {
       return {
@@ -99,6 +104,7 @@ function ProjectSelector() {
                     alt='Project preview'
                     fill
                     sizes={viewportSize.height > 1000 ? "600px" : "400px"}
+                    onLoad={() => handleImageLoad(currentIndex)}
                   />
                 </GradientBorders>
               </Link>
