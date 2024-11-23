@@ -71,7 +71,8 @@ function PairLearner() {
             <p className={styles.sectionTextIntro}>
               Full-stack language learning website allowing registered users to create and manage their own custom word
               pairs in any language and then practice their vocabulary by playing a word matching game. Features a
-              flexible tagging system for organizing pairs and creating personalized practice sessions.
+              flexible tagging system for organizing pairs and creating personalized practice sessions. Supports PWA
+              functionality for ease of use on mobile devices.
             </p>
           </div>
         </div>
