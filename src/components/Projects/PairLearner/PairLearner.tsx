@@ -71,8 +71,7 @@ function PairLearner() {
             <p className={styles.sectionTextIntro}>
               Full-stack language learning website allowing registered users to create and manage their own custom word
               pairs in any language and then practice their vocabulary by playing a word matching game. Features a
-              flexible tagging system for organizing pairs and creating personalized practice sessions. Supports PWA
-              functionality for ease of use on mobile devices.
+              flexible tagging system for organizing pairs and creating personalized practice sessions.
             </p>
           </div>
         </div>
@@ -102,6 +101,7 @@ function PairLearner() {
                   learning material through the ability to use custom word pairs. Built with Next.js 14 (App Router) and
                   TypeScript, featuring Supabase for authentication and database, custom email handling via Amazon SES,
                   and smooth animations powered by Framer Motion. Deployed on Vercel with custom domain integration.
+                  Supports PWA functionality for a more streamlined experience on mobile.
                 </p>
               </div>
             </div>
