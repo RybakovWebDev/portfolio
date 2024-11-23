@@ -196,7 +196,7 @@ function PairLearner() {
             <div className={styles.sideBySideRightWrapper}>
               <div className={styles.sectionTextRightWrapper}>
                 <p>
-                  The game also supports endless mode. By default, the game waits until the entire list is matched
+                  There is also support for endless mode. By default, the game waits until the entire list is matched
                   before replacing it completely, but with endless mode enabled it replaces every two matched pairs with
                   new ones. This was particularly tricky to get right as replacing after every single match would mean
                   that the pairs remain in the same position for the entire game. So instead I decided to replace the
