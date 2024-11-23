@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 
 import { GitHub, Linkedin, Mail } from "react-feather";
 
+import pairLearnerImage from "../public/images/projects/App_Demo_Screenshot_PairLearner.webp";
 import handsomeMenuImage from "../public/images/projects/App_Demo_Screenshot_Handsome.webp";
 import mdsImage from "../public/images/projects/App_Demo_Screenshot_MDS.webp";
 import todoListImage from "../public/images/projects/App_Demo_Screenshot_ToDo.webp";
@@ -13,6 +14,16 @@ import EBIcon from "../public/images/aws-icons/Elastic Beanstalk.webp";
 import S3Icon from "../public/images/aws-icons/Simple Storage Service.webp";
 
 export const PROJECTS = [
+  {
+    title: "Pair Learner",
+    slug: "PairLearner",
+    description: "Full-stack app for learning languages.",
+    stack: "Next.js, TypeScript, Supabase, Framer Motion",
+    media: pairLearnerImage,
+    year: "2024",
+    github: "https://github.com/RybakovWebDev/pair-learner",
+    live: "https://www.pairlearner.app/",
+  },
   {
     title: "Handsome bar",
     slug: "Handsome",

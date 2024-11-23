@@ -4,6 +4,7 @@ import { m, LazyMotion } from "framer-motion";
 import styles from "./CallToAction.module.css";
 
 import FileLink from "@/components/FileLink";
+import ContactForm from "../ContactForm";
 
 import { RESUME } from "@/constants";
 
@@ -28,6 +29,7 @@ function CallToAction() {
             </FileLink>
           ))}
         </div>
+        <ContactForm />
       </m.section>
     </LazyMotion>
   );

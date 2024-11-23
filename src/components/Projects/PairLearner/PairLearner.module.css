@@ -1,0 +1,51 @@
+.lessonTextWrapper {
+  width: 60%;
+}
+
+.lessonTextWrapper p {
+  margin: 0 0 2rem 0;
+}
+
+.lessonList {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lessonList strong {
+  border-bottom: 2px solid var(--color-text);
+}
+
+.lessonList p {
+  margin: 0 0 2rem 0;
+  font-size: 18px;
+}
+
+.lessonList ul {
+  width: 75%;
+  column-count: 2;
+  column-gap: 5rem;
+}
+
+.lessonList li {
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+  font-size: 18px;
+  break-inside: avoid-column;
+}
+
+@media (max-width: 1430px) {
+  .lessonTextWrapper {
+    width: 100%;
+  }
+
+  .lessonList {
+    width: 100%;
+  }
+  .lessonList ul {
+    width: 80%;
+    column-count: 1;
+  }
+}

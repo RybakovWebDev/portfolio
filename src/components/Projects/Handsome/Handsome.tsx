@@ -19,7 +19,7 @@ import { PROJECTS } from "@/constants";
 
 const loadFeatures = () => import("../../../features").then((res) => res.default);
 
-const project = PROJECTS[0];
+const project = PROJECTS.filter((p) => p.slug === "Handsome")[0];
 
 function Handsome() {
   const goalRef = useRef<HTMLDivElement>(null);
@@ -56,9 +56,9 @@ function Handsome() {
         <div ref={heroRef} className={styles.section}>
           <div className={styles.sectionTextCenterWrapper}>
             <p className={styles.sectionTextIntro}>
-              Commercial project for a local bar for which I developed a static page with an interactive menu, a map,
-              and relevant contact info. Developed using Next.js with TypeScript and Framer Motion. Optimized to be
-              accessible and fast, with a perfect 100 Lighthouse score.
+              Website for a local bar for which I developed a static page with an interactive menu, a map, and relevant
+              contact info. Developed using Next.js with TypeScript and Framer Motion. Optimized to be accessible and
+              fast, with a perfect 100 Lighthouse score.
             </p>
           </div>
         </div>

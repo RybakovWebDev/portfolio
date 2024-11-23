@@ -19,7 +19,7 @@ import { PROJECTS } from "@/constants";
 
 const loadFeatures = () => import("../../../features").then((res) => res.default);
 
-const project = PROJECTS[2];
+const project = PROJECTS.filter((p) => p.slug === "Todolist")[0];
 
 function Todolist() {
   const goalRef = useRef<HTMLDivElement>(null);

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { m, LazyMotion, useInView } from "framer-motion";
 
 import styles from "../projects.module.css";
-import MDSStyles from "./MDS.module.css";
 
 import SectionNameLine from "@/components/SectionNameLine";
 import EmbedVideo from "@/components/EmbedVideo";
@@ -22,7 +21,7 @@ import { calculateVideoHeight } from "@/helpers";
 
 const loadFeatures = () => import("../../../features").then((res) => res.default);
 
-const project = PROJECTS[1];
+const project = PROJECTS.filter((p) => p.slug === "MDS")[0];
 
 function MDS() {
   const viewportSize = useViewportSize();
@@ -44,8 +43,8 @@ function MDS() {
       y: lessonInView ? 0 : 20,
 
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -73,10 +72,10 @@ function MDS() {
 
         <div className={styles.sectionTextCenterWrapper}>
           <p className={styles.sectionTextIntro}>
-            My second personal project, Movie Data Search, is the largest one I&#39;ve done to date. It allows users to
-            find information about a movie (cast, budget, posters, trailers, where to watch it and so on) or chat with a
-            AI bot that talks about anything related to movies. Registered users can create and share watchlists that
-            are visible to anyone.
+            My second personal project, Movie Data Search, is one of the largest ones I&#39;ve done to date. It allows
+            users to find information about a movie (cast, budget, posters, trailers, where to watch it and so on) or
+            chat with a AI bot that talks about anything related to movies. Registered users can create and share
+            watchlists that are visible to anyone.
           </p>
         </div>
 
@@ -226,7 +225,7 @@ function MDS() {
               </div>
             </div>
             <div className={styles.sideBySideRightWrapper}>
-              <div className={MDSStyles.movieScrollWrapper}>
+              <div>
                 <GradientBorders rightBorder={"30px"} leftBorder={"30px"}>
                   <EmbedVideo
                     src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Movie_info_scroll_MP4_H264.mp4`}
@@ -332,7 +331,7 @@ function MDS() {
             <div className={styles.lineWrapper}>{lessonInView && <SectionNameLine fromRight={true} />}</div>
           </div>
           <div className={styles.sectionTextCenterWrapper}>
-            <div className={MDSStyles.lessonList}>
+            <div className={styles.lessonList}>
               <p ref={lessonRef}>
                 Building this project was a great learning experience that challenged me to expand my web development
                 skills. It improved my general understanding of how a full-stack website operates, how to organize such
@@ -343,27 +342,27 @@ function MDS() {
               <LazyMotion features={loadFeatures}>
                 <m.ul variants={container} initial='hidden' animate='show'>
                   <m.li variants={item}>
-                    <strong>MUI:</strong> used this UI framework to design and implement a responsive and user-friendly
-                    interface
+                    <strong>MUI</strong> <br /> used this UI framework to design and implement a responsive and
+                    user-friendly interface
                   </m.li>
                   <m.li variants={item}>
-                    <strong>AWS:</strong> learnt to store and serve image files using S3, as well as to deploy a
+                    <strong>AWS</strong> <br /> learnt to store and serve image files using S3, as well as to deploy a
                     full-stack application using Elastic Beanstalk and Amplify
                   </m.li>
                   <m.li variants={item}>
-                    <strong>JWT:</strong> used JSON Web Token to implement secure authentication and authorization for
-                    the users
+                    <strong>JWT</strong> <br /> used JSON Web Token to implement secure authentication and authorization
+                    for the users
                   </m.li>
                   <m.li variants={item}>
-                    <strong>APIs:</strong> interacted with different 3rd party APIs and combined their data to achieve
-                    what I wanted, built my own RESTful API to connect frontend with the backend
+                    <strong>APIs</strong> <br /> interacted with different 3rd party APIs and combined their data to
+                    achieve what I wanted, built my own RESTful API to connect frontend with the backend
                   </m.li>
                   <m.li variants={item}>
-                    <strong>Debouncing:</strong> optimized the performance of my search functionality and reduced
+                    <strong>Debouncing</strong> <br /> optimized the performance of my search functionality and reduced
                     unnecessary requests to the server
                   </m.li>
                   <m.li variants={item}>
-                    <strong>Chatbots:</strong> created a specialized AI chatbot that talks about movies
+                    <strong>Chatbots</strong> <br /> created a specialized AI chatbot that talks about movies
                   </m.li>
                 </m.ul>
               </LazyMotion>

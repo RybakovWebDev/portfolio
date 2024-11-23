@@ -95,20 +95,12 @@ function ContactForm() {
           onClick={() => {
             handleOpenForm();
           }}
-          initial={{ opacity: 0, y: 5 }}
+          initial={{ borderBottom: "2px solid rgba(var(--color-underline), 0.3)", opacity: 0, y: 5 }}
+          whileHover={{ borderBottom: "6px solid rgba(var(--color-underline), 0.8)" }}
           animate={{ opacity: hovered ? 1 : 0.8, y: 0 }}
+          transition={{ duration: 0.1 }}
         >
           Open Contact Form
-          <AnimatePresence>
-            {hovered && !smallScreen && (
-              <m.div
-                className={styles.underline}
-                initial={{ width: 0 }}
-                animate={{ width: "11.5rem" }}
-                exit={{ width: 0 }}
-              />
-            )}
-          </AnimatePresence>
         </m.button>
       </LazyMotion>
     );
@@ -138,7 +130,7 @@ function ContactForm() {
               >
                 <div className={styles.topInputWrapper}>
                   <div className={styles.inputWrapper}>
-                    <label htmlFor='name'>Your Name:</label>
+                    <label htmlFor='name'>Your name:</label>
                     <input
                       ref={nameInputRef}
                       type='text'

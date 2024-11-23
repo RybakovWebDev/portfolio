@@ -1,6 +1,4 @@
 .formWrapper {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +83,7 @@
 .openFormButton {
   bottom: 0;
   margin: 0 0 1rem 0;
-  height: 2rem;
+  /* height: 2rem; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -124,8 +122,8 @@
 
 .underline {
   position: absolute;
-  width: 100%;
-  height: 3px;
+  /* width: 11.5rem;
+  height: 3px; */
   background-color: rgb(var(--color-underline), 0.5);
 }
 

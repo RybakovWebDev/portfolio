@@ -10,10 +10,12 @@ import Footer from "@/components/Footer";
 import MDS from "@/components/Projects/MDS";
 import Todolist from "@/components/Projects/Todolist";
 import Handsome from "@/components/Projects/Handsome";
+import PairLearner from "@/components/Projects/PairLearner";
 
 import { PROJECTS } from "@/constants";
 
 const projectComponents = {
+  PairLearner: PairLearner,
   Handsome: Handsome,
   MDS: MDS,
   Todolist: Todolist,
