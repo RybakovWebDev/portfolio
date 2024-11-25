@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 
 import { GitHub, Linkedin, Mail } from "react-feather";
 
+import insightourImage from "../public/images/projects/App_Demo_Screenshot_Insightour.webp";
 import pairLearnerImage from "../public/images/projects/App_Demo_Screenshot_PairLearner.webp";
 import handsomeMenuImage from "../public/images/projects/App_Demo_Screenshot_Handsome.webp";
 import mdsImage from "../public/images/projects/App_Demo_Screenshot_MDS.webp";
@@ -14,6 +15,16 @@ import EBIcon from "../public/images/aws-icons/Elastic Beanstalk.webp";
 import S3Icon from "../public/images/aws-icons/Simple Storage Service.webp";
 
 export const PROJECTS = [
+  {
+    title: "Insightour",
+    slug: "Insightour",
+    description: "Static website for a local travel agency.",
+    stack: "Next.js, TypeScript, Framer Motion",
+    media: insightourImage,
+    year: "2024",
+    github: "https://github.com/RybakovWebDev/Insightour",
+    live: "https://www.insightour.agency/",
+  },
   {
     title: "Pair Learner",
     slug: "PairLearner",

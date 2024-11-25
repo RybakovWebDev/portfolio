@@ -1,5 +1,7 @@
 .lessonTextWrapper {
   width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
 .lessonTextWrapper p {

@@ -30,7 +30,9 @@ function AboutMe() {
               <p className={styles.text}>
                 I am a former video editor turned web developer. Since embarking on this journey in 2020, I have
                 developed multiple commercial and personal projects, as well as completed various courses on
-                technologies like JavaScript, TypeScript, React, Next.js and the MERN stack.
+                technologies like JavaScript, TypeScript, React, Next.js and the MERN stack. Currently, I work as a
+                full-stack developer (React/Python) at Vennie Tech UG, a startup developing an AI-powered customer
+                support automation platform for German e-commerce businesses.
               </p>
               <p className={styles.text}>
                 Technology holds a special place in my heart, and my passion for it fuels my constant self-improvement.
