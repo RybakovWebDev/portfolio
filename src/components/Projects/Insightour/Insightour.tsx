@@ -210,7 +210,9 @@ function Insightour() {
                   Supporting both English and Arabic was a key requirement, so I implemented a seamless language
                   switching system using React context. The content structure was designed with scalability in mind -
                   adding new languages or content is as simple as updating a single file. Pages dynamically access
-                  content based on the selected language, making future maintenance a breeze.
+                  content based on the selected language, making future maintenance a breeze. The system also includes
+                  automatic language detection based on the user&apos;s IP address and browser preferences, defaulting
+                  to Arabic for visitors from Middle Eastern countries.
                 </p>
               </div>
             </div>
