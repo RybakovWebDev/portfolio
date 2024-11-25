@@ -1,4 +1,4 @@
-import { ExternalLink, GitHub } from "react-feather";
+import { GitHub, Globe } from "react-feather";
 
 import ExternalLinkIcon from "@/components/ExternalLinkIcon";
 
@@ -13,7 +13,7 @@ function ProjectLinks({ live, github }: ProjectLinksProps) {
   return (
     <div className={styles.wrapper}>
       <ExternalLinkIcon aria-label='Open deployed project' link={live}>
-        <ExternalLink size={40} strokeWidth={1} />
+        <Globe size={40} strokeWidth={1} />
       </ExternalLinkIcon>
 
       <ExternalLinkIcon aria-label='Open project on GitHub' link={github}>
