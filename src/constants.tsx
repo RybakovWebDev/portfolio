@@ -18,7 +18,7 @@ export const PROJECTS = [
   {
     title: "Insightour",
     slug: "Insightour",
-    description: "Static website for a local travel agency.",
+    description: "Static website for a travel agency with multilingual support.",
     stack: "Next.js, TypeScript, Framer Motion",
     media: insightourImage,
     year: "2024",
@@ -28,7 +28,7 @@ export const PROJECTS = [
   {
     title: "Pair Learner",
     slug: "PairLearner",
-    description: "Full-stack app for learning languages.",
+    description: "Full-stack website for learning languages.",
     stack: "Next.js, TypeScript, Supabase, Framer Motion",
     media: pairLearnerImage,
     year: "2024",

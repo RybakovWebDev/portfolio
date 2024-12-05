@@ -13,7 +13,9 @@ function HomepageBackground() {
       <div className={styles.modelRight}>
         <Background3DModel shape={"x"} />
       </div>
-      <div className={styles.modelLeft}>{largeScreen && <Background3DModel shape={"triangle"} />}</div>
+      <div className={styles.modelLeft}>
+        <Background3DModel shape={"triangle"} />
+      </div>
       <div className={styles.modelRight}>
         <Background3DModel shape={"torus"} />
       </div>
