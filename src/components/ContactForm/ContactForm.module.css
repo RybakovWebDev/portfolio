@@ -180,7 +180,5 @@
     padding: 5px;
     height: auto;
     width: auto;
-    border: 1px solid rgb(var(--color-underline), 0.3);
-    border-radius: 5px;
   }
 }

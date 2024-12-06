@@ -129,7 +129,7 @@ function Insightour() {
               <GradientBorders topBorder={"20px"} rightBorder={"30px"} bottomBorder={"20px"} leftBorder={"30px"}>
                 <EmbedVideo
                   src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN}Insightour_About_MP4_H264.mp4`}
-                  height={calculateVideoHeight(viewportSize.width, 420, 185)}
+                  height={calculateVideoHeight(viewportSize.width, 650, 320)}
                   showSpinner={true}
                 />
               </GradientBorders>
