@@ -50,10 +50,6 @@
 }
 
 @media (max-width: 1430px) {
-  .wrapper {
-    margin: 0 0 3rem 0;
-  }
-
   html[data-color-theme="dark"] .innerWrapper {
     backdrop-filter: blur(10px);
   }
