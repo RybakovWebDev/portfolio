@@ -81,7 +81,7 @@ function ProjectSelector() {
         initial={{ opacity: 0, y: 100 }}
         transition={{ type: "spring", stiffness: 400, damping: 80, restDelta: 0.01 }}
       >
-        <ArrowButton direction='previous' action={prevProject} isNearEdge={lastProject} isVisible={!firstProject} />
+        <ArrowButton direction='previous' action={prevProject} isVisible={!firstProject} />
         <AnimatePresence mode={isSmallScreen ? "popLayout" : "wait"} custom={animationDirection}>
           <m.div
             key={selectedProject.slug}
@@ -133,7 +133,7 @@ function ProjectSelector() {
             <ProjectLinks live={selectedProject.live} github={selectedProject.github} />
           </m.div>
         </AnimatePresence>
-        <ArrowButton direction='next' action={nextProject} isNearEdge={firstProject} isVisible={!lastProject} />
+        <ArrowButton direction='next' action={nextProject} isVisible={!lastProject} />
       </m.section>
     </LazyMotion>
   );
