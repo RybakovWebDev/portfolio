@@ -137,6 +137,7 @@ function ContactForm() {
                       name='name'
                       required
                       placeholder='Name'
+                      autoComplete='name'
                       value={nameText}
                       maxLength={50}
                       onChange={(e) => setNameText(e.target.value)}
@@ -160,6 +161,7 @@ function ContactForm() {
                       name='email'
                       required
                       placeholder='Email'
+                      autoComplete='email'
                       value={emailText}
                       maxLength={50}
                       onChange={(e) => setEmailText(e.target.value)}
