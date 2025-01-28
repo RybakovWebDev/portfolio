@@ -57,9 +57,3 @@ h6 {
 #__next {
   isolation: isolate;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}

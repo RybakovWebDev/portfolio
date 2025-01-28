@@ -188,7 +188,7 @@ export const LIGHT_COLORS: ThemeColors = {
   "--color-text-secondary": "hsl(0 0% 0%)",
   "--color-underline": "0, 0, 0",
   "--color-background": "hsl(0 0% 92%)",
-  "--color-background-secondary": "hsla(0, 0%, 0%, 0.1)",
+  "--color-background-secondary": "hsla(0, 0%, 0%, 0.2)",
   "--color-gradient-lightness": "92%",
 };
 
