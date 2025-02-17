@@ -70,8 +70,8 @@ function Insightour() {
           <div className={styles.sectionTextCenterWrapper}>
             <p className={styles.sectionTextIntro}>
               A modern travel agency website featuring custom animations and multilingual support. Optimized for
-              performance, SEO and accessibility with perfect Lighthouse scores across all metrics. Delivers a fluid
-              experience across all devices.
+              performance, SEO and accessibility with perfect Lighthouse scores in all metrics. Fully responsive and
+              optimized for both mobile and desktop.
             </p>
           </div>
         </div>
