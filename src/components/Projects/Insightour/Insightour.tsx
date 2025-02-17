@@ -69,7 +69,7 @@ function Insightour() {
         <div ref={heroRef} className={styles.section}>
           <div className={styles.sectionTextCenterWrapper}>
             <p className={styles.sectionTextIntro}>
-              A dynamic travel agency platform featuring custom animations and multilingual support. Optimized for
+              A modern travel agency platform featuring custom animations and multilingual support. Optimized for
               performance, SEO and accessibility with perfect Lighthouse scores across all metrics. Delivers a fluid
               experience across all devices.
             </p>
