@@ -69,7 +69,7 @@ function Insightour() {
         <div ref={heroRef} className={styles.section}>
           <div className={styles.sectionTextCenterWrapper}>
             <p className={styles.sectionTextIntro}>
-              A modern travel agency platform featuring custom animations and multilingual support. Optimized for
+              A modern travel agency website featuring custom animations and multilingual support. Optimized for
               performance, SEO and accessibility with perfect Lighthouse scores across all metrics. Delivers a fluid
               experience across all devices.
             </p>
@@ -97,9 +97,10 @@ function Insightour() {
             <div className={styles.sideBySideRightWrapper}>
               <div className={styles.sectionTextRightWrapper}>
                 <p>
-                  The goal was to create a modern, accessible platform that would reach a wider audience without losing
-                  the company&apos;s visual identity. I transformed their pre-built website using Next.js for
-                  development, Framer Motion for smooth animations, and Vercel for optimal performance.
+                  The goal was to create a modern, accessible website that would reach a wider audience without losing
+                  the company&apos;s visual identity. I rebuilt their website from scratch using Next.js, implementing
+                  multilingual support with React Context, adding interactive animations using Framer Motion, and
+                  utilizing Vercel for deployment.
                 </p>
               </div>
             </div>
