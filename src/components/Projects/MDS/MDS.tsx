@@ -104,8 +104,8 @@ function MDS() {
                   implement user accounts where they could edit their names and upload custom profile pictures as well
                   as create, edit and share movie watchlists, with drag and drop support for lists, with everything
                   smoothly animated. As I was working on this, ChatGPT began to really blow up, so I also wanted to
-                  practice working with AI chatbots by using including it. Last but not least, it was important for me
-                  to make the website responsive and functional on devices with different screen sizes.
+                  practice working with AI chatbots by including it. Last but not least, it was important for me to make
+                  the website responsive and functional on devices with different screen sizes.
                 </p>
               </div>
             </div>
