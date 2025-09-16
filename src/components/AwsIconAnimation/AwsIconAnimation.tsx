@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Mesh, MeshBasicMaterial, TextureLoader, Vector3 } from "three";
-import { m, LazyMotion } from "framer-motion";
+import { m, LazyMotion } from "motion/react";
 
 import styles from "./AwsIconAnimation.module.css";
 

@@ -2,7 +2,7 @@
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { m, LazyMotion, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, AnimatePresence } from "motion/react";
 
 import styles from "./Header.module.css";
 

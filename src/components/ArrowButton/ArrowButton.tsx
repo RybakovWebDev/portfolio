@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, LazyMotion, m, useAnimation } from "framer-motion";
+import { AnimatePresence, LazyMotion, m, useAnimation } from "motion/react";
 import { ChevronLeft, ChevronRight } from "react-feather";
 import { useCallback, useEffect } from "react";
 

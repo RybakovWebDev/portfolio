@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence, m, useInView, LazyMotion, PanInfo } from "framer-motion";
+import { AnimatePresence, m, useInView, LazyMotion, PanInfo } from "motion/react";
 
 import styles from "./ProjectSelector.module.css";
 

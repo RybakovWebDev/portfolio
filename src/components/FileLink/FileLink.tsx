@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode } from "react";
-import { m, LazyMotion, useAnimation } from "framer-motion";
+import { m, LazyMotion, useAnimation } from "motion/react";
 import Image from "next/image";
 
 import styles from "./FileLink.module.css";

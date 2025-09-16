@@ -1,6 +1,7 @@
 import { CSSProperties } from "react";
 
 import { GitHub, Linkedin, Mail } from "react-feather";
+import { Transition } from "motion";
 
 import insightourImage from "../public/images/projects/App_Demo_Screenshot_Insightour.webp";
 import pairLearnerImage from "../public/images/projects/App_Demo_Screenshot_PairLearner.webp";
@@ -143,7 +144,7 @@ export const AWSICONS = [
   },
 ];
 
-export const smoothSpring = {
+export const smoothSpring: Transition = {
   type: "spring",
   damping: 60,
   stiffness: 500,

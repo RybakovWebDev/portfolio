@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import dynamic from "next/dynamic";
-import { m, LazyMotion, useInView } from "framer-motion";
+import { m, LazyMotion, useInView } from "motion/react";
 
 import styles from "../projects.module.css";
 import pairLearnerStyles from "./PairLearner.module.css";

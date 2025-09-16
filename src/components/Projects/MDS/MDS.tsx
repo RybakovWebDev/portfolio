@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { m, LazyMotion, useInView } from "framer-motion";
+import { m, LazyMotion, useInView } from "motion/react";
 
 import styles from "../projects.module.css";
 

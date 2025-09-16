@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { m, LazyMotion } from "framer-motion";
+import { m, LazyMotion } from "motion/react";
 
 import styles from "./ExternalLinkIcon.module.css";
 

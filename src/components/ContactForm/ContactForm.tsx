@@ -1,6 +1,6 @@
 "use client";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { AnimatePresence, m, LazyMotion } from "framer-motion";
+import { AnimatePresence, m, LazyMotion } from "motion/react";
 import { X } from "react-feather";
 
 import styles from "./ContactForm.module.css";

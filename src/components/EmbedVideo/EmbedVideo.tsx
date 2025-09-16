@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { m, LazyMotion, useInView, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, useInView, AnimatePresence } from "motion/react";
 import { Pause } from "react-feather";
 
 import styles from "./EmbedVideo.module.css";

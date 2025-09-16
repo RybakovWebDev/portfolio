@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { m, LazyMotion } from "framer-motion";
-import { motion } from "framer-motion-3d";
+import { m, LazyMotion } from "motion/react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh, MeshBasicMaterial, Vector2 } from "three";
 import { EffectComposer, Glitch } from "@react-three/postprocessing";
@@ -62,16 +61,19 @@ function Effects({ children }: EffectsProps) {
 function Model({ shape, setIsModelReady }: ModelProps) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [rotationDirection, setRotationDirection] = useState(1);
+  const [animationProgress, setAnimationProgress] = useState(0);
 
   const meshRef = useRef<Mesh | null>(null);
+
+  const easeOutQuart = (t: number): number => 1 - Math.pow(1 - t, 4);
 
   useEffect(() => {
     setRotationDirection(Math.random() > 0.5 ? 1 : -1);
 
-    let scrollTimeout = null;
+    let scrollTimeout: NodeJS.Timeout | null = null;
 
     const handleScroll = () => {
-      clearTimeout(scrollTimeout);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
       setIsScrolling(true);
 
       scrollTimeout = setTimeout(() => {
@@ -83,29 +85,35 @@ function Model({ shape, setIsModelReady }: ModelProps) {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
     };
   }, []);
 
-  useFrame((state, delta) => {
-    const speedMultiplier = isScrolling ? 1.5 : 0.3; // Increase speed when scrolling
-    meshRef.current.rotation.y += rotationDirection * delta * speedMultiplier;
-    meshRef.current.rotation.x += rotationDirection * 0.3 * delta * speedMultiplier;
-  });
-
   useEffect(() => {
     setIsModelReady(true);
+  }, []);
+
+  useFrame((state, delta) => {
+    if (meshRef.current) {
+      const speedMultiplier = isScrolling ? 1.5 : 0.3;
+      meshRef.current.rotation.y += rotationDirection * delta * speedMultiplier;
+      meshRef.current.rotation.x += rotationDirection * 0.3 * delta * speedMultiplier;
+
+      if (animationProgress < 1) {
+        const newProgress = Math.min(animationProgress + delta * 0.7, 1);
+        setAnimationProgress(newProgress);
+
+        const easedProgress = easeOutQuart(newProgress);
+        const scale = 0.7 + 0.3 * easedProgress;
+        meshRef.current.scale.setScalar(scale);
+      }
+    }
   });
 
   return (
-    <motion.mesh
-      ref={meshRef as any}
-      material={material}
-      initial={{ scale: 0.7 }}
-      animate={{ scale: 1 }}
-      transition={{ type: "spring", damping: 50, stiffness: 500 }}
-    >
+    <mesh ref={meshRef} material={material}>
       {shapes[shape]}
-    </motion.mesh>
+    </mesh>
   );
 }
 

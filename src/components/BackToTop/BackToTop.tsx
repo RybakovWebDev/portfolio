@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
+import { AnimatePresence, LazyMotion, m, useInView } from "motion/react";
 
 import { ChevronUp } from "react-feather";
 

@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import { m, LazyMotion, useAnimation } from "framer-motion";
+import { m, LazyMotion, useAnimation } from "motion/react";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 
 import styles from "./NameGeneratorDemo.module.css";

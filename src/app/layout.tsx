@@ -15,8 +15,9 @@ export const metadata = {
   description: "Andrey Rybakov's personal website and portfolio",
 };
 
-export default function RootLayout({ children }) {
-  const savedTheme = cookies().get("color-theme");
+export default async function RootLayout({ children }) {
+  const cookieStore = await cookies();
+  const savedTheme = cookieStore.get("color-theme");
   const theme = savedTheme?.value || "light";
 
   const themeColors = theme === "light" ? LIGHT_COLORS : DARK_COLORS;

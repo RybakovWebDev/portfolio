@@ -1,5 +1,5 @@
 "use client";
-import { m, LazyMotion, useInView, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, useInView, AnimatePresence } from "motion/react";
 
 import styles from "./AboutMe.module.css";
 
