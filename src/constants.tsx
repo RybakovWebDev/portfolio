@@ -150,7 +150,7 @@ export const smoothSpring: Transition = {
   stiffness: 500,
 };
 
-export const shevronAnimation = {
+export const shevronAnimation: Transition = {
   delay: 1,
   duration: 1,
   ease: "easeInOut",
@@ -166,13 +166,6 @@ export const initialVerticalOffset = {
 export const finalVerticalOffset = {
   y: 0,
   opacity: 1,
-};
-
-export const opacity1 = {
-  opacity: 1,
-};
-export const opacity0 = {
-  opacity: 0,
 };
 
 interface ThemeColors extends CSSProperties {

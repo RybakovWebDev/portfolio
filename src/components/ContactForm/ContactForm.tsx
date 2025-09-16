@@ -8,7 +8,6 @@ import styles from "./ContactForm.module.css";
 import { useRefsContext } from "@/contexts/RefsContext";
 import useViewportSize from "@/hooks/useViewportSize";
 import { scrollToRef } from "@/helpers";
-import { opacity0, opacity1 } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -114,9 +113,9 @@ function ContactForm() {
             <m.div className={styles.formWrapper}>
               <m.div
                 className={styles.formBackdrop}
-                initial={opacity0}
-                animate={opacity1}
-                exit={opacity0}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={handleCloseForm}
               />
               <m.form
@@ -124,8 +123,8 @@ function ContactForm() {
                 name='contact form'
                 className={styles.form}
                 initial={formInitial}
-                animate={opacity1}
-                exit={opacity0}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onSubmit={(e) => handleSubmit(e)}
               >
                 <div className={styles.topInputWrapper}>
