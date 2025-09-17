@@ -77,6 +77,10 @@
   position: relative;
 }
 
+.timelineItem:last-child .bullets li:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1430px) {
   .timelineItem {
     width: 80%;
