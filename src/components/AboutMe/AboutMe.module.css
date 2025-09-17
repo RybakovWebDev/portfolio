@@ -22,18 +22,6 @@
   font-size: 22px;
 }
 
-.text::selection,
-.caret::selection {
-  background: var(--color-background-secondary);
-  color: black;
-}
-
-.text::selection,
-.caret::-moz-selection {
-  background: var(--color-background-secondary);
-  color: black;
-}
-
 .caret {
   animation: blink 1s infinite;
 }

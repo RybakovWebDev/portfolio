@@ -24,7 +24,7 @@ function ProjectSelector() {
   const viewportSize = useViewportSize();
 
   const { projectSelectorRef } = useRefsContext();
-  const isInView = useInView(projectSelectorRef, { once: true, amount: 0.4 });
+  const isInView = useInView(projectSelectorRef, { once: true, amount: 0.3 });
 
   const isSmallScreen = viewportSize.width < 1100;
   const selectedProject = PROJECTS[currentIndex];

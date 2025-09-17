@@ -14,7 +14,7 @@ function AboutMe() {
   const viewportSize = useViewportSize();
 
   const headerIsInView = useInView(headerRef);
-  const aboutIsInView = useInView(aboutRef, { once: true, amount: 0.5 });
+  const aboutIsInView = useInView(aboutRef, { once: true, amount: 0.3 });
 
   const showAbout = viewportSize.width > 1080 ? aboutIsInView : !headerIsInView;
 

@@ -1,0 +1,105 @@
+.wrapper {
+  margin: 0 0 6rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timelineItem {
+  width: 40rem;
+  display: flex;
+}
+
+.timelineContent {
+  justify-self: flex-start;
+}
+
+.timelineItem:not(:last-child) .timelineContent {
+  padding: 0 0 1rem 0;
+}
+
+.timelineMarker {
+  margin: 0 2rem 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-end;
+}
+
+.dot {
+  margin: 0.5rem 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  z-index: 2;
+}
+
+.line {
+  width: 2px;
+  background-color: var(--color-text);
+  flex-grow: 1;
+}
+
+.date {
+  margin: 0.2rem 0 0.5rem 0;
+  color: var(--color-text-secondary-light);
+  font-size: 0.9rem;
+  text-wrap-mode: nowrap;
+}
+
+.company {
+  margin: 0 0 0.25rem 0;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.position {
+  margin: 0 0 1rem 0;
+  color: var(--color-text-secondary-light);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.bullets {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  list-style: circle;
+}
+
+.bullets li {
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  position: relative;
+}
+
+@media (max-width: 1430px) {
+  .timelineItem {
+    width: 80%;
+    max-width: 40rem;
+  }
+
+  .timelineMarker {
+    margin: 0 1rem 0 0;
+  }
+
+  .date {
+    margin: 0.2rem 0 0.25rem 0;
+  }
+
+  .company {
+    margin: 0;
+  }
+
+  .position {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .bullets li {
+    font-size: 14px;
+  }
+}

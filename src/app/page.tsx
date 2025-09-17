@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
+import Experience from "@/components/Experience";
 import CallToAction from "@/components/CallToAction";
 
 const ProjectSelector = dynamic(() => import("@/components/ProjectSelector"));
@@ -16,6 +17,7 @@ export default function Home() {
     <main className={styles.main}>
       <Hero />
       <AboutMe />
+      <Experience />
       <ProjectSelector />
       <CallToAction />
       <Footer />

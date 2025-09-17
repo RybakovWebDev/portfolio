@@ -171,6 +171,7 @@ export const finalVerticalOffset = {
 interface ThemeColors extends CSSProperties {
   "--color-text": string;
   "--color-text-secondary": string;
+  "--color-text-secondary-light": string;
   "--color-underline": string;
   "--color-background": string;
   "--color-background-secondary": string;
@@ -180,6 +181,7 @@ interface ThemeColors extends CSSProperties {
 export const LIGHT_COLORS: ThemeColors = {
   "--color-text": "hsl(0 0% 0%)",
   "--color-text-secondary": "hsl(0 0% 0%)",
+  "--color-text-secondary-light": "hsl(0, 0%, 30%)",
   "--color-underline": "0, 0, 0",
   "--color-background": "hsl(0 0% 92%)",
   "--color-background-secondary": "hsla(0, 0%, 0%, 0.2)",
@@ -189,8 +191,35 @@ export const LIGHT_COLORS: ThemeColors = {
 export const DARK_COLORS: ThemeColors = {
   "--color-text": "hsl(0 0% 92%)",
   "--color-text-secondary": "hsl(0 0% 0%)",
+  "--color-text-secondary-light": "hsl(0, 0%, 64%)",
   "--color-underline": "250, 250, 250",
   "--color-background": "hsl(0 0% 8%)",
   "--color-background-secondary": "hsla(0, 0%, 80%, 0.4)",
   "--color-gradient-lightness": "8%",
 };
+
+export const timeline = [
+  {
+    date: "2024 - Present",
+    name: "Vennie Tech UG",
+    position: "Full-Stack Developer",
+    bullets: [
+      "Implemented JTL warehouse management system integration, including REST API connectivity, intuitive onboarding UI for non-technical users, and backend services for order management synchronization between JTL and Shopify, expanding the platform's reach to businesses using JTL-Wawi",
+      "Integrated multiple third-party services (Notion, Xentral, Freshdesk, Gorgias) via REST APIs with a primary Python/FastAPI backend and a dedicated Node.js backend for external integrations",
+      "Built and maintained key frontend components using React, TypeScript and MUI",
+      "Wrote automated end-to-end tests using Playwright to verify cross-platform workflows, reducing manual QA and accelerating deployment cycles",
+      "Developed initial Stripe-based payment infrastructure, including API integration, subscriptions, usage tracking, and automated billing",
+    ],
+  },
+  {
+    date: "2022 - 2024",
+    name: "Self-employed",
+    position: "Full-Stack Developer",
+    bullets: [
+      "Architected and deployed Pair Learner, a full-stack language learning platform with user authentication, PostgreSQL database, and Amazon SES email integration, featuring advanced game mechanics and tag-based content filtering",
+      "Delivered Insightour, a multilingual travel agency with custom D3.js map visualizations, automatic language detection, and Google Sheets API integration, achieving perfect 100/100 Lighthouse scores",
+      "Engineered Movie Data Search using MERN stack, integrating AI chatbot functionality with drag-and-drop interfaces and comprehensive AWS deployment across EC2, S3, and CloudFront",
+      "Established automated CI/CD pipelines and cloud infrastructure management, consistently delivering optimized applications with perfect performance metrics",
+    ],
+  },
+];
