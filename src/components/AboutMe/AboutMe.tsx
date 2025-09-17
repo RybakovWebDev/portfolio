@@ -59,8 +59,8 @@ function AboutMe() {
               </m.p>
 
               <m.p className={styles.text} variants={item}>
-                Below you&apos;ll find some of my projects which can demonstrate how I turn ideas into interactive
-                experiences 😊
+                Below you&apos;ll find a timeline of my professional experience, along with some of my projects which
+                can demonstrate how I turn ideas into interactive experiences 😊
                 <span className={styles.caret}>|</span>
               </m.p>
             </m.div>

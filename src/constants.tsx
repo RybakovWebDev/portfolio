@@ -217,7 +217,7 @@ export const timeline = [
     position: "Full-Stack Developer",
     bullets: [
       "Architected and deployed Pair Learner, a full-stack language learning platform with user authentication, PostgreSQL database, and Amazon SES email integration, featuring advanced game mechanics and tag-based content filtering",
-      "Delivered Insightour, a multilingual travel agency with custom D3.js map visualizations, automatic language detection, and Google Sheets API integration, achieving perfect 100/100 Lighthouse scores",
+      "Delivered Insightour, a website for a multilingual travel agency with custom D3.js map visualizations, automatic language detection, and Google Sheets API integration, achieving perfect 100/100 Lighthouse scores",
       "Engineered Movie Data Search using MERN stack, integrating AI chatbot functionality with drag-and-drop interfaces and comprehensive AWS deployment across EC2, S3, and CloudFront",
       "Established automated CI/CD pipelines and cloud infrastructure management, consistently delivering optimized applications with perfect performance metrics",
     ],

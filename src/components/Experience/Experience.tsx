@@ -4,13 +4,18 @@ import { m, LazyMotion, useInView } from "motion/react";
 
 import styles from "./Experience.module.css";
 
+import useViewportSize from "@/hooks/useViewportSize";
+
 import { timeline } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function Experience() {
+  const viewportSize = useViewportSize();
+  const isMobile = viewportSize.width < 1080;
+
   const wrapperRef = useRef(null);
-  const isInView = useInView(wrapperRef, { once: true, amount: 0.5 });
+  const isInView = useInView(wrapperRef, { once: true, amount: isMobile ? 0.1 : 0.3 });
 
   return (
     <LazyMotion features={loadFeatures}>

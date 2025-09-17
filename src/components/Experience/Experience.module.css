@@ -38,7 +38,7 @@
 }
 
 .line {
-  width: 2px;
+  width: 1px;
   background-color: var(--color-text);
   flex-grow: 1;
 }
