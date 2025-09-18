@@ -25,17 +25,17 @@ function Experience() {
             <div className={styles.timelineMarker}>
               <m.div
                 className={styles.dot}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isInView ? 1 : 0 }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.5,
                   delay: index * 1,
                 }}
               ></m.div>
               <m.div
                 className={styles.line}
-                initial={{ scaleY: 0 }}
-                animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
+                initial={{ scaleY: 0, opacity: 0 }}
+                animate={isInView ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
                 transition={{
                   type: "spring",
                   duration: 2,
