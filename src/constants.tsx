@@ -190,7 +190,7 @@ export const LIGHT_COLORS: ThemeColors = {
 
 export const DARK_COLORS: ThemeColors = {
   "--color-text": "hsl(0 0% 92%)",
-  "--color-text-secondary": "hsl(0 0% 0%)",
+  "--color-text-secondary": "hsl(0 0% 80%)",
   "--color-text-secondary-light": "hsl(0, 0%, 64%)",
   "--color-underline": "250, 250, 250",
   "--color-background": "hsl(0 0% 8%)",
@@ -200,7 +200,14 @@ export const DARK_COLORS: ThemeColors = {
 
 export const timeline = [
   {
-    date: "2024 - Present",
+    date: "2026 - Present",
+    name: "Data Monsters",
+    website: "https://www.linkedin.com/company/data-monsters/",
+    position: "Frontend Developer",
+    bullets: [],
+  },
+  {
+    date: "2024 - 2026",
     name: "Vennie Tech UG",
     position: "Full-Stack Developer",
     bullets: [

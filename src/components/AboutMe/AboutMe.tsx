@@ -48,8 +48,8 @@ function AboutMe() {
               </m.p>
 
               <m.p className={styles.text} variants={item}>
-                Currently, I work as a full-stack developer (React/Python) at Vennie Tech, a startup developing an
-                AI-powered customer support automation platform for German e&#8209;commerce businesses.
+                Currently, I work as a frontend developer at Data Monsters where I design, build and maintain UI
+                components.
               </m.p>
 
               <m.p className={styles.text} variants={item}>

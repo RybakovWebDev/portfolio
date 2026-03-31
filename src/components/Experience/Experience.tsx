@@ -56,6 +56,11 @@ function Experience() {
             >
               <div className={styles.date}>{item.date}</div>
               <h3 className={styles.company}>{item.name}</h3>
+              {item.website && (
+                <a className={styles.website} href={item.website} target='_blank'>
+                  {item.website}
+                </a>
+              )}
               <h4 className={styles.position}>{item.position}</h4>
               <ul className={styles.bullets}>
                 {item.bullets.map((bullet: string, bulletIndex: number) => (
