@@ -24,7 +24,7 @@ export const PROJECTS = [
     media: insightourImage,
     year: "2024",
     github: "https://github.com/RybakovWebDev/Insightour",
-    live: "https://www.insightour.agency/",
+    live: "https://insightour.vercel.app/",
   },
   {
     title: "Pair Learner",
